@@ -1,0 +1,12 @@
+governance:
+  data-platform.justice.gov.uk/review-after: "2023-12-31"
+  data-platform.justice.gov.uk/siro: "someone.important@justice.gov.uk"
+  data-platform.justice.gov.uk/retention: "forever"
+  data-platform.justice.gov.uk/expected-frequency: "monthly"
+  lineage:
+     # Please specify HMCTS, HMPPS, LAA, OPG, HQ, ALB, OGD
+    data-platform.justice.gov.uk/top-level-domain: "HMPPS"
+    # for example Prison NOMIS, Delius, XHibit...
+    data-platform.justice.gov.uk/source: "gov.uk"
+    # If your data product is based on another data product, please specify its URI here.
+    data-platform.justice.gov.uk/parent-product:
