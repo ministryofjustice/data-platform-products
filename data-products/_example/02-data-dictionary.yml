@@ -10,6 +10,8 @@ databases:
               description: "Offence group"
               data-type: "string"
               column-type: "dimension"
+              # e.g. reference data - a table in this database or the URI of a table in another product
+              reference-table: "offence-groups"
             - name: "date"
               data-type: "date"
               column-type: "dimension"
@@ -45,3 +47,16 @@ databases:
             - name: "Population"
               data-type: "int"
               column-type: "fact"
+        offence-groups:
+          description: "Reference table for offences"
+          reference-data: true
+          update-strategy: "all"
+          columns:
+            - name: "offence"
+              description: "Offence group"
+              data-type: "string"
+              column-type: "dimension"
+            - name: "description"
+              description: "Offence group description"
+              data-type: "string"
+              column-type: "supplementary"
