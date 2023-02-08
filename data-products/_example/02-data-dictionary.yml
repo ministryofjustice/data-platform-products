@@ -1,29 +1,46 @@
+
+#-------------------------------------------------------------
+# Implementation notes
+#  - YAML validation required
+#  - Warn on missing recommended attributes
+#  - Warn on table & field names containing spaces or dashes
+#-------------------------------------------------------------
 databases:
-  prison-population:
+  # You must specify at least one database
+  prison_population:
+    # Add a description for your database to help users find it. 
+    # This is optional, as the data product description will also aid discoverability.
     description: "Extracted from the Offender Management Statistics Quarterly publication. Please refer to notes in that publication."
+    # Status: please specify beta, experimental, production
+    status: "production"
+    # If versioning is enabled, the Data Platform will store a historical snaphot of the database each time an update is sent.
+    # This can add SIGNIFICANTLY to storage costs, so you may be asked to justify this.
+    enable-versioning: false
     tables:
-        population-by-offence:
+        # Your database must contain at least one table. Each table must contain at least one column.
+        population_by_offence:
           description: "Prison population by offence group"
           update-strategy: "all-dimensions"
           columns:
-            - name: "offence"
+              # A column must contain at least a name and a data type. 
+            - name: "Offence"
               description: "Offence group"
               data-type: "string"
               column-type: "dimension"
               # e.g. reference data - a table in this database or the URI of a table in another product
-              reference-table: "offence-groups"
-            - name: "date"
+              reference-table: "offence_groups"
+            - name: "Date"
               data-type: "date"
               column-type: "dimension"
-            - name: "population"
+            - name: "Population"
               data-type: "int"
               column-type: "fact"
-        population-by-age:
+        population_by_age:
           description: "Prison population by age band"
           update-strategy: "selected-dimensions"
           update-dimensions: ["date"]
           columns:
-            - name: "age"
+            - name: "Age"
               description: "Age band"
               data-type: "string"
               column-type: "dimension"
@@ -33,11 +50,11 @@ databases:
             - name: "Population"
               data-type: "int"
               column-type: "fact"
-        population-by-prison:
+        population_by_prison:
           description: "Prison population by prison establishment"
           update-strategy: "all-dimensions"
           columns:
-            - name: "prison"
+            - name: "Prison"
               description: "Prison establishment"
               data-type: "string"
               column-type: "dimension"
@@ -47,16 +64,16 @@ databases:
             - name: "Population"
               data-type: "int"
               column-type: "fact"
-        offence-groups:
+        offence_groups:
           description: "Reference table for offences"
           reference-data: true
           update-strategy: "all"
           columns:
-            - name: "offence"
+            - name: "Offence"
               description: "Offence group"
               data-type: "string"
               column-type: "dimension"
-            - name: "description"
+            - name: "Description"
               description: "Offence group description"
               data-type: "string"
               column-type: "supplementary"
