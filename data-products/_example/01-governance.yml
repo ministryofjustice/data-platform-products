@@ -1,8 +1,15 @@
 governance:
+  # owner - who ultimately owns / controls this data (this could be another govenment department)
+  data-platform.justice.gov.uk/owner: "moj"
   data-platform.justice.gov.uk/review-after: "2023-12-31"
   data-platform.justice.gov.uk/siro: "someone.important@justice.gov.uk"
   data-platform.justice.gov.uk/retention: "forever"
-  data-platform.justice.gov.uk/expected-frequency: "monthly"
+  # Status: please specify draft, development, testing, acceptance, production, sunset, retired
+  data-platform.justice.gov.uk/status: "production"
+  update-frequency:
+    # update-frequency-unit: days, weeks, months, years
+    data-platform.justice.gov.uk/update-unit: "months"
+    data-platform.justice.gov.uk/update-value: 3
   # Protective marking should be one of "Offical", "Official Sensitive", or "None" for published / publicly availble data.
   # DO NOT SENT SECRET OR TOP SECRET DATA TO THE PLATFORM.
   data-platform.justice.gov.uk/protective-marking: "None"
