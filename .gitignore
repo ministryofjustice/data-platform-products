@@ -11,6 +11,8 @@
 .AppleDouble
 .LSOverride
 *.sha256
+# Excel temp file
+~$*.xlsx
 
 # Icon must end with two \r
 Icon
