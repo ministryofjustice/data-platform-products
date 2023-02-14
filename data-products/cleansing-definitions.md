@@ -24,7 +24,7 @@ Please use the identfier (ID) for the cleaning types when populating your `03-tr
 | correct-typos | Correct typographical errors | A typographical error (often shortened to typo), is a mistake (such as a spelling mistake) made in the typing of printed (or electronic) material. The term includes errors due to mechanical failure or slips of the hand or finger, but excludes errors of ignorance, such as spelling errors, or changing and misuse of words such as “than” and “then”. |
 | standardisation | Standardisation | Standardisation transforms data into a standard form. Standardisation is used to extract entity information (e.g., person, company, telephone number, location) and to assign some semantic value for subsequent manipulation. Standardisation will incorporate information reduction transformations during a consolidation or summarisation application. |
 | statistical-methods | Statistical methods | Statistical methods are used to identify data issues and provide cleaning or flagging of data issues. |
-| suppress-small-values | Suppress small values | Suppression is when small values are removed are replaced to avoud identifying individuals. |
+| suppress-small-values | Suppress small values | Suppression is when small values are removed are replaced to avoid identifying individuals. |
 | redaction | Redaction | Redaction is the removal of sensitive or other restricted information |
 | type-conversion | Type conversion | Type conversion (also called casting) is an operation that converts a piece of data of one data type to another data type. Type conversion can be used to make sure that numbers are stored as numerical data types and that a date should be stored as a date object. |
 <!-- 
@@ -41,7 +41,7 @@ Please use the identfier (ID) for the cleaning types when populating your `03-tr
 You have a table called `prison_releases` defined in `02-data-dictionary.yml` which contains anonymised, row-level data from a case management system about individuals released from prison. Since an individual can be "released" from more than one prison sentence at the same time, or because of data entry errors, the raw data may appear to, or actually, contain duplicates. You know your users only want a single record per release, so you choose to de-duplicate the data by deleting all but once instance of each duplicate. This is a table level cleaning process which would be documented in  `03-transformations.yml` like this:
 
 ```
-table:
+cleansing:
    prison_releases:
      - type: "remove-duplicates"
        description: "Duplicate releases removed by choosing the duplicate with the highest numbered record ID and discarding the others"
@@ -50,7 +50,7 @@ table:
 Your users aren't happy with that, so instead you apply a `GROUP BY` to your dataset, so that there is only one row per release but you retain information which may otherwise be lost:
 
 ```
-table:
+cleansing:
    prison_releases:
      - type: "group-duplicates"
        description: "Duplicate releases removed by concatenating multiple sentences into one string"
@@ -59,7 +59,7 @@ table:
 Multiple cleaning steps can be added, so for example you might want to clearly show any enhancements you added as part of the above `group-duplicates`:
 
 ```
-table:
+cleansing:
    prison_releases:
      - type: "group-duplicates"
        description: "Duplicate releases removed by concatenating multiple sentences into one string"
@@ -70,16 +70,16 @@ table:
 Furthermore, there may be a column of data which contains jargon or abbrevations which you wish to make more user-friendly. Assuming you cannot take the preferred approach of providing a reference table for this, you may decide to expand or replace these as part of your cleansing. For example there's a column which contains some information about whether the release was early, on time, or late, but users of the case management system have taken to entering "E", "OT", "L", "VL", and there's no reference data or data entry validation for this. You use your knowledge of the system to provide an enhancement to expand those abbreviations.
 
 ```
-table:
+cleansing:
    prison_releases:
      - type: "group-duplicates"
        description: "Duplicate releases removed by concatenating multiple sentences into one string"
      - type: "data-enhancement"
        description: "Add a flag column to indicate which records were affected by the de-duplication process"
-    columns:
-      timely_release:
-        - type: "abbreviation-expansion"
-          description: "Replace data entry shorthand with expanded text (e.g. 'VL' => 'very late'); or 'unknown'"
+     columns:
+       timely_release:
+         - type: "abbreviation-expansion"
+           description: "Replace data entry shorthand with expanded text (e.g. 'VL' => 'very late'); or 'unknown'"
 ```
 
 Our [example data product](./_example/) contains a few more examples.
