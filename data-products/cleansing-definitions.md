@@ -6,7 +6,7 @@ When describing what has happened to your data before users get to interact with
 
 These have been derived from the contributions made to the [Data Management Wiki](https://datamanagement.wiki/data_management/data_quality_management_system/data_cleansing). <!--Some of these contain US spellings - we also accept the UK equivalent (for example "normalisation" and "normalization" are both accepted).-->
 
-Please use the identfier (ID) for the cleaning types when you are completing your `03-transformations.yml` file.
+Please use the identfier (ID) for the cleaning types when populating your `03-transformations.yml` file.
 
 | ID                       | Method                                      | Description                                                                               |
 | -------------------------| ------------------------------------------- | ----------------------------------------------------------------------------------------- |
@@ -80,6 +80,13 @@ table:
           description: "Replace data entry shorthand with expanded text (e.g. 'VL' => 'very late'); or 'unknown'"
 ```
 
+### Data with no cleansing applied
+
+If your data has not undergone any cleansing, we suggest you explicitly inform users of this by adding `type: none` for each of your tables. Otherwise we will assume there has been undocumented cleansing. An exception is made for tables defined as reference data - here we assume no cleansing has been applied if there is no cleansing specified.
+
+## Template generation
+
+Our roadmap contains plans for tools to aid in template generation - for example generating a skeleton `03-transformations.yml` given a `02-data-dictionary.yml` as input.
 
 ## Suggesting changes
 
