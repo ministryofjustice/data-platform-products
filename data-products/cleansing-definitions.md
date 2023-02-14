@@ -10,8 +10,7 @@ Please use the identfier (ID) for the cleaning types when populating your `03-tr
 
 | ID                       | Method                                      | Description                                                                               |
 | -------------------------| ------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| abbreviation-expansion | Abbreviation expansion | Abbreviation expansion transforms abbreviations into their full form. There are different kinds of abbreviation. One type shortens each of a set of words to a smaller form, where the abbreviation consists of a prefix of the original data value. E.g. "SOP" stands for "Standard Operating Platform" |
-| clustering | Clustering | Clustering is one of the statistical methods that can be used to find values that are unexpected and thus erroneous. Clustering is a classic data mining technique based on machine learning that divides ​groups of abstract objects into classes of similar objects. Clustering helps to split data into several subsets. Each of these clusters consists of data objects with high inter-similarity and low intra-similarity. |
+| abbreviation-expansion | Abbreviation expansion | Abbreviation expansion transforms abbreviations into their full form. There are different kinds of abbreviation. These can be shortened words such as "mgmt", or acronyms, where the abbreviation consists of a prefix of the original data value. E.g. "SOP" stands for "Standard Operating Platform" |
 | cross-checking | Cross-checking with a validated data set | Some data cleansing solutions will clean data by cross-checking with a validated data set. In these cases you should reference the dataset used for cross-checking. |
 | remove-duplicates | Remove duplicates | Duplicates are data points that are repeated in your dataset. Every duplicate detection method proposed requires an algorithm for determine whether two or more records are duplicate representations of the same entity. |
 | group-duplicates | Group duplicates | Duplicates are data points that are repeated in your dataset. Every duplicate detection method proposed requires an algorithm for determine whether two or more records are duplicate representations of the same entity. |
@@ -19,9 +18,7 @@ Please use the identfier (ID) for the cleaning types when populating your `03-tr
 | data-harmonisation | Data harmonisation | Data harmonisation is the process of bringing together your data of varying file formats, naming conventions, and columns, and transforming it into one cohesive data set. |
 | remove-inconsistency | Remove inconsistency | Data inconsistency is a condition that occurs between tables when we keep similar data in different formats in two different tables. Data inconsistency creates unreliable information, because it will be difficult to determine which version of the information is correct. |
 | remove-irrelevant-data | Remove irrelevant data | Irrelevant data are the data that are not actually needed, and don’t fit under the context of the problem we’re trying to solve. |
-| merging | Merging | The merging of two or more databases will both identify errors (where there are differences between the two databases) and create new errors (i.e. duplicate records). |
 | drop-or-impute-missing-values | Drop or impute missing values | Missing values are data or data points of a variable that are missing. Missing data are a common occurrence and can have a significant effect on the conclusions that can be drawn from the data. |
-| normalisation | Normalisation | Normalisation is a formal technique that eliminates the data redundancy in a number of steps (= normal forms) by splitting the data according to fixed rules. |
 | remove-outliers | Remove outliers | Outliers are values that are significantly different from all other observations. They should not be removed unless there is a good reason for that. |
 | parsing | Parsing | Parsing is a method where one string of data gets converted into a different type of data. Parsing in data cleansing is performed for the detection of syntax errors. |
 | correct-typos | Correct typographical errors | A typographical error (often shortened to typo), is a mistake (such as a spelling mistake) made in the typing of printed (or electronic) material. The term includes errors due to mechanical failure or slips of the hand or finger, but excludes errors of ignorance, such as spelling errors, or changing and misuse of words such as “than” and “then”. |
@@ -30,6 +27,12 @@ Please use the identfier (ID) for the cleaning types when populating your `03-tr
 | suppress-small-values | Suppress small values | Suppression is when small values are removed are replaced to avoud identifying individuals. |
 | redaction | Redaction | Redaction is the removal of sensitive or other restricted information |
 | type-conversion | Type conversion | Type conversion (also called casting) is an operation that converts a piece of data of one data type to another data type. Type conversion can be used to make sure that numbers are stored as numerical data types and that a date should be stored as a date object. |
+<!-- 
+** these are transforms not cleaning (?)
+| normalisation | Normalisation | Normalisation is a formal technique that eliminates the data redundancy in a number of steps (= normal forms) by splitting the data according to fixed rules. |
+| clustering | Clustering | Clustering is one of the statistical methods that can be used to find values that are unexpected and thus erroneous. Clustering is a classic data mining technique based on machine learning that divides ​groups of abstract objects into classes of similar objects. Clustering helps to split data into several subsets. Each of these clusters consists of data objects with high inter-similarity and low intra-similarity. |
+| merging | Merging | The merging of two or more databases will both identify errors (where there are differences between the two databases) and create new errors (i.e. duplicate records). |
+-->
 
 <!-- Note to maintainers - there is a "table-to-markdown" spreadsheet in the repo to help generate the above table. VS Code: Alt+Z or Option+Z to toggle word wrap. -->
 
