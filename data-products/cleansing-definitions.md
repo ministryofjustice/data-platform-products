@@ -38,9 +38,9 @@ Please use the identfier (ID) for the cleaning types when populating your `03-tr
 
 ## Examples
 
-You have a table called `prison_releases` defined in `02-data-dictionary.yml` which contains anonymised, row-level data from a case management system about individuals released from prison. Since an individual can be "released" from more than one prison sentence at the same time, or because of data entry errors, the raw data may appear to, or actually, contain duplicates. You know your users only want a single record per release, so you choose to de-duplicate the data by deleting all but once instance of each duplicate. This is a table level cleaning process which would be documented in  `03-transformations.yml` like this:
+You have a table called `prison_releases` defined in `02-data-dictionary.yml` which contains anonymised, row-level data from a case management system about individuals released from prison. Since an individual can be "released" from more than one prison sentence at the same time, or because of data entry errors, the raw data may appear to, or actually, contain duplicates. You know your users only want a single record per release, so you choose to de-duplicate the data by deleting all but one instance of each duplicate. This is a table level cleaning process which would be documented in  `03-transformations.yml` like this:
 
-```
+```yaml
 cleansing:
    prison_releases:
      - type: "remove-duplicates"
@@ -49,7 +49,7 @@ cleansing:
 
 Your users aren't happy with that, so instead you apply a `GROUP BY` to your dataset, so that there is only one row per release but you retain information which may otherwise be lost:
 
-```
+```yaml
 cleansing:
    prison_releases:
      - type: "group-duplicates"
@@ -58,7 +58,7 @@ cleansing:
 
 Multiple cleaning steps can be added, so for example you might want to clearly show any enhancements you added as part of the above `group-duplicates`:
 
-```
+```yaml
 cleansing:
    prison_releases:
      - type: "group-duplicates"
@@ -69,7 +69,7 @@ cleansing:
 
 Furthermore, there may be a column of data which contains jargon or abbrevations which you wish to make more user-friendly. Assuming you cannot take the preferred approach of providing a reference table for this, you may decide to expand or replace these as part of your cleansing. For example there's a column which contains some information about whether the release was early, on time, or late, but users of the case management system have taken to entering "E", "OT", "L", "VL", and there's no reference data or data entry validation for this. You use your knowledge of the system to provide an enhancement to expand those abbreviations.
 
-```
+```yaml
 cleansing:
    prison_releases:
      - type: "group-duplicates"
