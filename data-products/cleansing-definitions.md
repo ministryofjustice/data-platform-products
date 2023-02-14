@@ -29,7 +29,6 @@ Please use the identfier (ID) for the cleaning types when populating your `03-tr
 | statistical-methods | Statistical methods | Statistics is the science and technique of collecting, processing, interpreting and presenting data based on rules of mathematics and the laws of logic. Statistical methods are used to identify data issues. Statistical methods include regression, correlation, min, max, standard deviation, mean and clustering. |
 | suppress-small-values | Suppress small values | Suppression is when small values are removed are replaced to avoud identifying indivuals |
 | redaction | Redaction | Redaction is te removal of sensitive or other restricted information |
-| transformation | Transformation | Transformation involves transforming data according to rules and lookup tables or making combinations of data from different sources. Data selection, mapping and data cleansing are some basic transformation techniques. Advanced data transformation techniques include: standardisation, character set conversion and encoding handling, field splitting and merging, summary and de-duplication. |
 | type-conversion | Type conversion | Type conversion (also called casting) is an operation that converts a piece of data of one data type to another data type. Type conversion can be used to make sure that numbers are stored as numerical data types and that a date should be stored as a date object. |
 
 <!-- Note to maintainers - there is a "table-to-markdown" spreadsheet in the repo to help generate the above table. VS Code: Alt+Z or Option+Z to toggle word wrap. -->
@@ -65,7 +64,7 @@ table:
        description: "Add a flag column to indicate which records were affected by the de-duplication process"
 ```
 
-Furthermore, there may be a column of data which contains jargon or abbrevations which you wish to make more user-friendly. Assuming you cannot take the preferred approach of providing a reference table for this, you may decide to expand or replace these as part of your cleansing. For example there's a column which contains some information about whether the release was early, on time or late, but users of the case management system have taken to entering "E", "OT", "L", "VL", and there's no reference data or data entry validation for this. You use your knowledge of the system to provide an enhancement to expand those abbreviations.
+Furthermore, there may be a column of data which contains jargon or abbrevations which you wish to make more user-friendly. Assuming you cannot take the preferred approach of providing a reference table for this, you may decide to expand or replace these as part of your cleansing. For example there's a column which contains some information about whether the release was early, on time, or late, but users of the case management system have taken to entering "E", "OT", "L", "VL", and there's no reference data or data entry validation for this. You use your knowledge of the system to provide an enhancement to expand those abbreviations.
 
 ```
 table:
@@ -80,9 +79,11 @@ table:
           description: "Replace data entry shorthand with expanded text (e.g. 'VL' => 'very late'); or 'unknown'"
 ```
 
+Our [example data product](./_example/) contains a few more examples.
+
 ### Data with no cleansing applied
 
-If your data has not undergone any cleansing, we suggest you explicitly inform users of this by adding `type: none` for each of your tables. Otherwise we will assume there has been undocumented cleansing. An exception is made for tables defined as reference data - here we assume no cleansing has been applied if there is no cleansing specified.
+If your data has not undergone any cleansing, we suggest you explicitly inform users of this by adding `type: none` for each of your tables. Otherwise we will assume there has been undocumented cleansing. An exception is made for tables [defined as reference data](./_example/02-data-dictionary.yml#L67) - here we assume no cleansing has been applied if there is no cleansing specified.
 
 ## Template generation
 
