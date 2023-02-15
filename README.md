@@ -10,8 +10,7 @@ This repository is where [Data Platform](https://github.com/ministryofjustice/da
 
 1. Each data product has a unique directory within the [data-products](./data-products) directory of this repository
 2. Data products are defined in a collection of YAML files within their respective directory
-3. We have an example in the ./data-products/_example directory
-4. Please refer to our [documentation](./) for more comprehensive instructions on configuring and managing data products. 
-
+3. We have an example in the ./data-products/\_example directory
+4. Please refer to our [documentation](./) for more comprehensive instructions on configuring and managing data products.
 
 Ensure as many of the [GitHub Standards](https://github.com/ministryofjustice/github-repository-standards) rules are maintained as possibly can.

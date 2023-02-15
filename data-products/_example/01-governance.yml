@@ -15,7 +15,7 @@ governance:
   data-platform.justice.gov.uk/protective-marking: "None"
   data-platform.justice.gov.uk/allow-derived-products: true
   lineage:
-     # Please specify HMCTS, HMPPS, LAA, OPG, HQ, ALB, OGD
+    # Please specify HMCTS, HMPPS, LAA, OPG, HQ, ALB, OGD
     data-platform.justice.gov.uk/top-level-domain: "HMPPS"
     # for example Prison NOMIS, Delius, XHibit...
     data-platform.justice.gov.uk/source: "https://www.gov.uk/government/collections/offender-management-statistics-quarterly"

@@ -14,5 +14,3 @@ cleansing:
 transformations:
   population_by_offence:
     type: "none"
-
-  
