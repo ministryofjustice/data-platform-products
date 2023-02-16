@@ -1,3 +1,4 @@
+---
 #-------------------------------------------------------------
 # Implementation notes
 #  - YAML validation required
@@ -9,7 +10,7 @@
 prison_population:
   # model can be "domain" or "tabular"
   model: "tabular"
-  # Add a description for your collection to help users find it. 
+  # Add a description for your collection to help users find it.
   # This is optional, as the data product description will also aid discoverability.
   description: "Extracted from the Offender Management Statistics Quarterly publication. Please refer to notes in that publication."
   # If versioning is enabled, the Data Platform will store a historical snaphot of the database each time an update is sent.
