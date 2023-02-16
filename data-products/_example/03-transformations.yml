@@ -19,5 +19,3 @@ population_by_prison:
           description: "Prison names can be inconsistent between systems and publications, so we have replaced prison names with the standard set"
   transformations:
     type: "none"
-
-  

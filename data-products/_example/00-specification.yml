@@ -9,11 +9,10 @@ specification:
   data-platform.justice.gov.uk/owner-github-team: "data-platform-admins"
   #type: raw data, derived data, dataset, reports, analytic view, automated decision making, data enhanced product
   data-platform.justice.gov.uk/type: "dataset"
-  support:    
+  support:
     # Please provide at least one contact - group email, Slack channel or MS Teams (NOT an individual's email address please)
     data-platform.justice.gov.uk/owner-email: "data-platform@digital.justice.gov.uk"
     data-platform.justice.gov.uk/owner-ms-teams:
     data-platform.justice.gov.uk/owner-slack-channel: "data-platform"
     # If you have written some guidance (SharePoint, GitHub, Confluence, Google doc...) add the URL here
-    data-platform.justice.gov.uk/product-guidance-url: 
-    
+    data-platform.justice.gov.uk/product-guidance-url:
