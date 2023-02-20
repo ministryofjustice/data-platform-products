@@ -1,0 +1,23 @@
+governance:
+  # owner - who ultimately owns / controls this data (this could be another govenment department)
+  data-platform.justice.gov.uk/owner: "moj"
+  data-platform.justice.gov.uk/review-after: "2023-12-31"
+  data-platform.justice.gov.uk/siro: "someone.important@justice.gov.uk"
+  data-platform.justice.gov.uk/retention: "forever"
+  # Status: please specify draft, development, testing, acceptance, production, sunset, retired
+  data-platform.justice.gov.uk/status: "production"
+  update-frequency:
+    # update-frequency-unit: days, weeks, months, years
+    data-platform.justice.gov.uk/update-unit: "months"
+    data-platform.justice.gov.uk/update-value: 3
+  # Protective marking should be one of "Offical", "Official Sensitive", or "None" for published / publicly availble data.
+  # DO NOT SENT SECRET OR TOP SECRET DATA TO THE PLATFORM.
+  data-platform.justice.gov.uk/protective-marking: "None"
+  data-platform.justice.gov.uk/allow-derived-products: true
+  lineage:
+    # Please specify HMCTS, HMPPS, LAA, OPG, HQ, ALB, OGD
+    data-platform.justice.gov.uk/top-level-domain: "HMPPS"
+    # for example Prison NOMIS, Delius, XHibit...
+    data-platform.justice.gov.uk/source: "https://www.gov.uk/government/collections/offender-management-statistics-quarterly"
+    # If your data product is based on another data product, please specify its URI here.
+    data-platform.justice.gov.uk/parent-product:
