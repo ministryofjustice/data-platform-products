@@ -12,7 +12,7 @@ Our goals are:
 
 - Make data easily discoverable by users who wish to use that data. We do this by encouraging the owners of data products to supply high quality [metadata](https://en.wikipedia.org/wiki/Metadata)
 - Make data more usable, whatever the purpose, by applying product thinking to our data, and clearly describing the lineage and transformations of our data products
-- Make it easier for us to provide goverance for data, for example by identfying owners, protective markings and retention periods
+- Make it easier for us to provide governance for data, for example by identfying owners, protective markings and retention periods
 
 ## Defining a data product
 
