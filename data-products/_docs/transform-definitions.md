@@ -20,6 +20,14 @@ Please use the identifier (ID) for the transformation types when populating your
 | statistical-methods           | Statstical methods                       | Statistics is the science and technique of collecting, processing, interpreting and presenting data based on rules of mathematics and the laws of logic. Statistical methods include regression, correlation, min, max, standard deviation, mean and clustering.                                      |
 | selection                     | Selection                                | Selection is when you choose to only provide a subset of your data - please clearly describe what is and isn't included, and your reasoning for this.                                                                                                                                                 |
 
+### Data with no transformations applied
+
+If your data has not undergone any transformation, we suggest you explicitly inform users of this by adding `type: none` for each of your tables to make this clear to users.
+
+## Considerations
+
+Carefully consider if transformations are enhancing the data product for general use, rather than for a single use case.
+
 ## Template generation
 
 Our roadmap contains plans for tools to aid in template generation - for example generating a skeleton `03-transformations.yml` given a `02-data-dictionary.yml` as input.
@@ -27,3 +35,4 @@ Our roadmap contains plans for tools to aid in template generation - for example
 ## Suggesting changes
 
 If you wish to suggest additions or improvements to the cleansing types, please [follow our guidance](https://github.com/ministryofjustice/data-platform-products) on submitting a pull request.
+

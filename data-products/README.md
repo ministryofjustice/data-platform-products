@@ -12,15 +12,15 @@ Our goals are:
 
 - Make data easily discoverable by users who wish to use that data. We do this by encouraging the owners of data products to supply high quality [metadata](https://en.wikipedia.org/wiki/Metadata)
 - Make data more usable, whatever the purpose, by applying product thinking to our data, and clearly describing the lineage and transformations of our data products
-- Make it easier for us to provide governance for data, for example by identfying owners, protective markings and retention periods
+- Make it easier for us to provide governance for data, for example by identfying owners, protective markings and retention periods.
 
 ## Defining a data product
 
 A data product will have a unique name, and is defined using a collection of YAML files.
 
-| File name                     | Purpose
-|-------------------------------| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `00-specification.yml`        | Aids data discoverability by providing a name, description and tags for a data product. It also contains contact details of the data product owner.                             |
-| `01-governance.yml`           | Contains protective marking, retention period, expected update frequency and data lineage.                                                                                      |
-| `02-data-dictionary.yml`      | Contains the field and column (or domain, attribute and value) defintions contained in the data product, along with type information and user-friendly names.                   |
-| `03-transformations.yml`      | Describes the cleaning and transformation data will undergo before it is stored on the platform.                                                                                |
+| File name                     | Purpose                                                                                                                                                                         | Documentation                                                                                           |
+|-------------------------------| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `00-specification.yml`        | Aids data discoverability by providing a name, description and tags for a data product. It also contains contact details of the data product owner.                             | [Data product specification](./_docs/product-specification.md)                                          |
+| `01-governance.yml`           | Contains protective marking, retention period, expected update frequency and data lineage.                                                                                      | [Defining product governance](./_docs/product-governance.md)                                            |
+| `02-data-dictionary.yml`      | Contains the field and column (or domain, attribute and value) defintions contained in the data product, along with type information and user-friendly names.                   | [Data dictionary guidance](./_docs/data-dictionary.md)                                                  |
+| `03-transformations.yml`      | Describes the [cleaning](./_docs/cleansing-definitions.md) and [transformation](./_docs/transform-definitions.md) data will undergo before it is stored on the platform.        | [Cleaning](./_docs/cleansing-definitions.md) and [transformation](./_docs/transform-definitions.md)     |

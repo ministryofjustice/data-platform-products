@@ -1,23 +1,29 @@
 governance:
-  # owner - who ultimately owns / controls this data (this could be another govenment department)
-  data-platform.justice.gov.uk/owner: "moj"
+  # data-controller - who ultimately owns / controls this data (this could be another govenment department)
+  data-platform.justice.gov.uk/data-controller: "moj"
   data-platform.justice.gov.uk/review-after: "2023-12-31"
-  data-platform.justice.gov.uk/siro: "someone.important@justice.gov.uk"
-  data-platform.justice.gov.uk/retention: "forever"
-  # Status: please specify draft, development, testing, acceptance, production, sunset, retired
-  data-platform.justice.gov.uk/status: "production"
+  data-platform.justice.gov.uk/siro: "information.asset.owner@justice.gov.uk"
+  retention:
+    # retention-strategy: "date-uploaded", "data-date-key", or "forever"
+    data-platform.justice.gov.uk/retention-strategy: "forever"
+    # retention-unit: months or years
+    data-platform.justice.gov.uk/retention-unit: "years"
+    data-platform.justice.gov.uk/retention-value: 25
   update-frequency:
-    # update-frequency-unit: days, weeks, months, years
+    # update-unit: days, weeks, months
     data-platform.justice.gov.uk/update-unit: "months"
     data-platform.justice.gov.uk/update-value: 3
   # Protective marking should be one of "Offical", "Official Sensitive", or "None" for published / publicly availble data.
-  # DO NOT SENT SECRET OR TOP SECRET DATA TO THE PLATFORM.
+  # DO NOT SEND SECRET OR TOP SECRET DATA TO THE PLATFORM.
   data-platform.justice.gov.uk/protective-marking: "None"
+  # Status: please specify draft, development, testing, production, sunset, retired
+  data-platform.justice.gov.uk/status: "production"
   data-platform.justice.gov.uk/allow-derived-products: true
   lineage:
-    # Please specify HMCTS, HMPPS, LAA, OPG, HQ, ALB, OGD
+    # E.g. HMCTS, HMPPS, LAA, OPG, HQ, ALB, OGD
     data-platform.justice.gov.uk/top-level-domain: "HMPPS"
-    # for example Prison NOMIS, Delius, XHibit...
+    # Specify source OR parent-product
+    # for example Prison NOMIS, Delius, XHibit or a URL
     data-platform.justice.gov.uk/source: "https://www.gov.uk/government/collections/offender-management-statistics-quarterly"
-    # If your data product is based on another data product, please specify its URI here.
+    # If your data product is based on another data product, please specify its name here.
     data-platform.justice.gov.uk/parent-product:
