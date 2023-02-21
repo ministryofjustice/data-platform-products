@@ -4,6 +4,8 @@ specification:
   data-platform.justice.gov.uk/description: "Example Data Product contains published prison population from 2001 to present"
   data-platform.justice.gov.uk/product-tags: ["HMPPS", "prisons", "published data", "national statistics"]
   data-platform.justice.gov.uk/value-proposition: "Adding published prison population allows for a reusable, consistent, sharable resource for this commonly used data"
+  # limitations are optional, but you might want to tell users what they CAN'T do with this data
+  data-platform.justice.gov.uk//limitations:
   data-platform.justice.gov.uk/product-version: 0.0.1
   #GitHub team is optional but we can provide more advanced analytics for GitHub users
   data-platform.justice.gov.uk/owner-github-team: "data-platform-admins"

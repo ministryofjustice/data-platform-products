@@ -12,6 +12,7 @@ specification:
   data-platform.justice.gov.uk/description: "Example Data Product contains published prison population from 2001 to present"
   data-platform.justice.gov.uk/product-tags: ["HMPPS", "prisons", "published data", "national statistics"]
   data-platform.justice.gov.uk/value-proposition: "Adding published prison population allows for a reusable, consistent, safely sharable resource for this commonly used data"
+  data-platform.justice.gov.uk//limitations:
   data-platform.justice.gov.uk/product-version: 0.0.1
   data-platform.justice.gov.uk/owner-github-team: "data-platform-admins"
   data-platform.justice.gov.uk/type: "dataset"
@@ -60,6 +61,7 @@ We would expect most data products to be of type `dataset`, `raw-data`, or `data
 
 Most of the attributes outlined above are required, however:
 
+- `data-platform.justice.gov.uk//limitations` is optional free text which tells users about what they *can't* or *shouldn't* do with this data
 - `data-platform.justice.gov.uk/product-version` is optional, but recommended as we can provide versioned APIs for your data
 - `data-platform.justice.gov.uk/owner-github-team` is optional - if provided we can provide more advanced analytics for GitHub users
 - `data-platform.justice.gov.uk/product-guidance-url` is optional - if this is provided the data catalogue can link to your guidance (for example a SharePoint page or Google doc)
