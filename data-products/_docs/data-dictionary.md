@@ -10,7 +10,7 @@ The overall data dictionary requires these top-level attributes:
 default:
   model: "tabular"
   description: "Extracted from the Offender Management Statistics Quarterly publication. Please refer to notes in that publication."
-  limitations: {free text}
+  limitations: { free text }
   enable-versioning: false
 ```
 
@@ -28,25 +28,25 @@ The `tables` attribute is contained within the top-level group, and contains a l
 ### Example
 
 ```yaml
-  tables:
-    population_by_offence:
-      description: "Prison population by offence group"
-      update-strategy: "all-dimensions"
-      columns:
-        # A column must contain at least a name and a data type.
-        - name: "Offence"
-          description: "Offence group"
-          data-type: "string"
-          column-type: "dimension"
-          # e.g. reference data - a table in this database or the URI of a table in another product
-          reference-table: "offence_groups"
-        - name: "Date"
-          data-type: "date"
-          column-type: "dimension"
-          primary-period: true
-        - name: "Population"
-          data-type: "int"
-          column-type: "fact"
+tables:
+  population_by_offence:
+    description: "Prison population by offence group"
+    update-strategy: "all-dimensions"
+    columns:
+      # A column must contain at least a name and a data type.
+      - name: "Offence"
+        description: "Offence group"
+        data-type: "string"
+        column-type: "dimension"
+        # e.g. reference data - a table in this database or the URI of a table in another product
+        reference-table: "offence_groups"
+      - name: "Date"
+        data-type: "date"
+        column-type: "dimension"
+        primary-period: true
+      - name: "Population"
+        data-type: "int"
+        column-type: "fact"
 ```
 
 This defines one table called "population_by_offence", with three columns - "Offence", "Date", and "Population". In general, a column will have the following attributes:
@@ -77,9 +77,9 @@ When `selected-dimensions` is specified, you must also supply an array of update
 ```yaml
 tables:
   population_by_age:
-      description: "Prison population by age band"
-      update-strategy: "selected-dimensions"
-      update-dimensions: ["date"]
+    description: "Prison population by age band"
+    update-strategy: "selected-dimensions"
+    update-dimensions: ["date"]
 ```
 
 In this case, an update will overwrite all values based on just the date column, regardless of the "age" dimension. Column(s) specified in the `update-dimensions` array must exist in the table.
@@ -100,7 +100,7 @@ Our favourite tool for editing YAML is [Visual Studio Code](https://code.visuals
 
 ### Microsoft SQL Server
 
-[An MSSQL Tips article on  using SQL to generate a JSON schema](https://www.mssqltips.com/sqlservertip/6270/save-sql-server-database-structure-as-json/)
+[An MSSQL Tips article on using SQL to generate a JSON schema](https://www.mssqltips.com/sqlservertip/6270/save-sql-server-database-structure-as-json/)
 
 ### Oracle
 

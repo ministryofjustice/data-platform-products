@@ -50,12 +50,12 @@ The `retention-value` should be a whole number indicating how many of the `reten
 
 ```yaml
 retention:
-    data-platform.justice.gov.uk/retention-strategy: "data-date-key"
-    data-platform.justice.gov.uk/retention-unit: "years"
-    data-platform.justice.gov.uk/retention-value: 3
+  data-platform.justice.gov.uk/retention-strategy: "data-date-key"
+  data-platform.justice.gov.uk/retention-unit: "years"
+  data-platform.justice.gov.uk/retention-value: 3
 ```
 
-Would be implemented as *"delete any data older than 3 years, based on the date field for each table"*.
+Would be implemented as _"delete any data older than 3 years, based on the date field for each table"_.
 
 You can also specify `forever` for data which is allowed to be kept indefinitely - for example anonymised management information or published statistics. If `forever` is specified, the `retention-unit` and `retention-value` values are ignored - they are included above to provide a more complete example.
 
@@ -78,11 +78,11 @@ The `update-value` should be a whole number indicating how many of the `update-u
 
 ```yaml
 update-frequency:
-    data-platform.justice.gov.uk/update-unit: "months"
-    data-platform.justice.gov.uk/update-value: 3
+  data-platform.justice.gov.uk/update-unit: "months"
+  data-platform.justice.gov.uk/update-value: 3
 ```
 
-Would be implemented as *"new data will be supplied every three months"*. We don't support multiples of years, but a dataset with annual updates can be specified as having a 12 month update cycle.
+Would be implemented as _"new data will be supplied every three months"_. We don't support multiples of years, but a dataset with annual updates can be specified as having a 12 month update cycle.
 
 If a data update cycle is missed, data product owners will be notified via the contact information supplied in the [data product specification](product-specification.md).
 
@@ -93,8 +93,8 @@ It is important to users of the data that they know where it has come from. This
 - `data-platform.justice.gov.uk/top-level-domain` defines at a high level which part of the organisation the data has come from. For example "HMCTS", "HMPPS", "LAA", "OPG", "HQ"
 - `data-platform.justice.gov.uk/source` - the detailed source of the data. Can be a system such as "NOMIS" or "XHIBIT" or the URL of a statistical publication
 - \- **OR** \-
-- `data-platform.justice.gov.uk/parent-product` - if your data product is based on another data product, please specify its name here. (The "name" as it appears in the list of data platform product folders, not the user-friendly title of the product). 
-  
+- `data-platform.justice.gov.uk/parent-product` - if your data product is based on another data product, please specify its name here. (The "name" as it appears in the list of data platform product folders, not the user-friendly title of the product).
+
 Note if `parent-product` is supplied then `source` s ignored.
 
 ### Other attributes
