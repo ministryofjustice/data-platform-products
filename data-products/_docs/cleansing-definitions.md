@@ -2,6 +2,8 @@
 
 When describing what has happened to your data before users get to interact with it, you should describe any data cleaning processes which you have used, either at a table or column level. Cleansing should be documented in the `03-transformations.yml` file in your data product definition folder.
 
+See also our guidance on describing [transformations](./transform-definitions.md) your data may have applied to it.
+
 ## Types of data cleansing
 
 These have been derived from the contributions made to the [Data Management Wiki](https://datamanagement.wiki/data_quality_management_system/data_cleansing). <!--Some of these contain US spellings - we also accept the UK equivalent (for example "normalisation" and "normalization" are both accepted).-->

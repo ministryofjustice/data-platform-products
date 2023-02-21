@@ -2,6 +2,8 @@
 
 When describing what has happened to your data before users get to interact with it, you should describe any data transformations you have used. Transforms should be documented in the `03-transformations.yml` file in your data product definition folder.
 
+See also our guidance on describing [data cleaning](./cleansing-definitions.md) your data may have applied to it.
+
 ## Types of data transformation
 
 These have been derived from the contributions made to the [Data Management Wiki](https://datamanagement.wiki/data_quality_management_system/data_cleansing). <!--Some of these contain US spellings - we also accept the UK equivalent (for example "normalisation" and "normalization" are both accepted).-->
