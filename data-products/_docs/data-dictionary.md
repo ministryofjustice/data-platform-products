@@ -1,10 +1,10 @@
 # The data dictionary
 
-The data dictionary contains a detailed specification of the structure of the data in YAML format. Like most schemas, we require that you supply table names, column names and column types, along with other metadata. **Unlike** other schemas, we also ask that you **describe** the tables and columns so that users understand what they are.
+The `02-data-dictionary.yml` file should contain a detailed specification of the structure of the data in YAML format. Like most schemas, we require that you supply table names, column names and column types, along with other metadata. **Unlike** some other schemas, we also ask that you **describe** the tables and columns so that users understand what they are.
 
 ## Top-level attributes
 
-THe overall data dictionary requires these top-level attributes:
+The overall data dictionary requires these top-level attributes:
 
 ```yaml
 default:
@@ -16,21 +16,19 @@ default:
 
 The top-level attribute ("`default`" in the above example) defines a group or collection of datasets. In most cases you will have only one collection, so we recommend you use the data product name.
 
-- `model` - allowable values are `tabular` or `domain` (defalult is "tabular")
+- `model` - allowable values are `tabular` or `domain` (default is "tabular")
 - `description` - optional free text to help users find the data. Useful if you have more than one group and you want to enhance the description provided by the overall data product specification
 - `limitations` - optional free text to enhance any particular limitations of a group of data, in addition to any limitations provided by the overall data product specification
-- `enable-versioning` - allowable values are true or false (default false). If versioning is enabled, the Data Platform will store a historical snaphot of the database each time an update is sent. This can add SIGNIFICANTLY to storage costs, so you may be asked to justify this
+- `enable-versioning` - allowable values are true or false (default false). If versioning is enabled, the Data Platform will store a historical snaphot of the database each time an update is sent. This can add SIGNIFICANTLY to storage costs, so you may be asked to justify this.
 
 ## Table and column attributes
 
-The `tables` attribute is comtained within the top-level group, and contains a list of table names (without spaces). Additional attributes are defined for the table including a user-friendly description and an update strategy (more on this below). Each table then contains a collection of columns with attributes to define each column.
+The `tables` attribute is contained within the top-level group, and contains a list of table names (without spaces). Additional attributes are defined for the table including a user-friendly description and an update strategy (more on this below). Each table then contains a collection of columns with attributes to define each column.
 
 ### Example
 
 ```yaml
   tables:
-    # Your database must contain at least one table. Each table must contain at least one column. If the data is time-based,
-    # please indicate which column is the primary date value using the "primary-period: true" attribute.
     population_by_offence:
       description: "Prison population by offence group"
       update-strategy: "all-dimensions"
@@ -55,8 +53,8 @@ This defines one table called "population_by_offence", with three columns - "Off
 
 - `name` - the name of the column as seen by users. This should be kept relatively short, and we suggest avoiding spaces or hyphens
 - `description` - additonal free text information about the column
-- `data-type` - one of string, int (integer), float, date
-- `column-type` - either `fact` or `dimension`. In this case the "fact' is the numeric value for prison population, and the two dimensions are "Offence" and "Date". So a user could use the dimension values "Theft offences" and "31st Dec 2022" to find a particular population value (fact) - 758.
+- `data-type` - one of string, int (integer), float, date, time, or datetime
+- `column-type` - either `fact` or `dimension`. In this case the "fact" is the numeric value for prison population, and the two dimensions are "Offence" and "Date". So a user could use the dimension values "Theft offences" and "31st Dec 2022" to find a particular prison population value (fact) - 758 ([source](https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-july-to-september-2022)).
 - `reference-table` is optional for dimension columns. If the dimension contains a code or ID which refers to a lookup table, the name of that table should be supplied here. The reference table must contain a matching column - by name and type - on which to perform joins and lookups.
 
 ### Dates and "primary period" columns
@@ -72,7 +70,7 @@ When sending updates to data to the platform, we need to know how to replace or 
 - `all-dimensions` or;
 - `selected-dimensions`
 
-WHen `all-dimensions` is specified, data will be updated or inserted based on all the columns which are defined as `column-type: "dimension"`. For example if new data is sent to the table defined above, any existing values (facts) will be ovewritten if the offence and date matches existing data, or new records will be added if a matching combination of offence and date is not found.
+When `all-dimensions` is specified, data will be updated or inserted based on all the columns which are defined as `column-type: "dimension"`. For example if new data is sent to the table defined above, any existing values (facts) will be ovewritten if the offence and date matches existing data, or new records will be added if a matching combination of offence and date is not found.
 
 When `selected-dimensions` is specified, you must also supply an array of update key dimensions. For example:
 
@@ -84,7 +82,7 @@ tables:
       update-dimensions: ["date"]
 ```
 
-In this case, an update will overwrite all values based on just the date column, regardless of the "age" dimension. Column specified in the `update-dimensions` array must exist in the table.
+In this case, an update will overwrite all values based on just the date column, regardless of the "age" dimension. Column(s) specified in the `update-dimensions` array must exist in the table.
 
 If `update-strategy` is omitted, the platform assumes the `all-dimensions` strategy should be used.
 
@@ -106,4 +104,4 @@ Our favourite tool for editing YAML is [Visual Studio Code](https://code.visuals
 
 ### Oracle
 
-We havent yet found a JSON schema generator for Oracle - please let us know if you know of one. The SQL Server approach above may be adaptable to Oracle.
+We havent yet found a JSON schema generator for Oracle - please let us know if you know of one (or want to create one!). The SQL Server approach above may be adaptable to Oracle.
