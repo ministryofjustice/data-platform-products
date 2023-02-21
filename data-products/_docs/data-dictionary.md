@@ -53,7 +53,7 @@ This defines one table called "population_by_offence", with three columns - "Off
 
 - `name` - the name of the column as seen by users. This should be kept relatively short, and we suggest avoiding spaces or hyphens
 - `description` - additonal free text information about the column
-- `data-type` - one of string, int (integer), float, date, time, or datetime
+- `data-type` - one of `string`, `int` (integer), `float`, `decimal`, `bit` (boolean), `date`, `time`, or `datetime`
 - `column-type` - either `fact` or `dimension`. In this case the "fact" is the numeric value for prison population, and the two dimensions are "Offence" and "Date". So a user could use the dimension values "Theft offences" and "31st Dec 2022" to find a particular prison population value (fact) - 758 ([source](https://www.gov.uk/government/statistics/offender-management-statistics-quarterly-july-to-september-2022)).
 - `reference-table` is optional for dimension columns. If the dimension contains a code or ID which refers to a lookup table, the name of that table should be supplied here. The reference table must contain a matching column - by name and type - on which to perform joins and lookups.
 
