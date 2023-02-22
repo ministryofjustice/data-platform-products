@@ -71,3 +71,5 @@ Most of the attributes outlined above are required, however:
 ## Further reading
 
 [Index of documention for data product defintion](../README.md#defining-a-data-product)
+
+[Example data product](../_example/)

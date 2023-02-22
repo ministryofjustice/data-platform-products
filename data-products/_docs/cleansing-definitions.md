@@ -95,3 +95,5 @@ If you wish to suggest additions or improvements to the cleansing types, please 
 ## Further reading
 
 [Index of documention for data product defintion](../README.md#defining-a-data-product)
+
+[Example data product](../_example/)

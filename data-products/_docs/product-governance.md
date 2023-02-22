@@ -105,3 +105,5 @@ Note if `parent-product` is supplied then `source` s ignored.
 ## Further reading
 
 [Index of documention for data product defintion](../README.md#defining-a-data-product)
+
+[Example data product](../_example/)
