@@ -105,3 +105,9 @@ Our favourite tool for editing YAML is [Visual Studio Code](https://code.visuals
 ### Oracle
 
 We havent yet found a JSON schema generator for Oracle - please let us know if you know of one (or want to create one!). The SQL Server approach above may be adaptable to Oracle.
+
+## Further reading
+
+[Index of documention for data product defintion](../README.md#defining-a-data-product)
+
+[Example data product](../_example/)

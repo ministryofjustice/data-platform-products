@@ -31,7 +31,7 @@ The product's `title` must be descriptive and unique - we check for uniqueness w
 
 > NOTE: the `product-version` attribute is not yet documented here. We are still determining if this should be provided by the data product owner, or automatically incremented when the data dictionary or other metadata is updated.
 
-Product `tags` are an array of strings.
+Product `tags` are an array array of quoted strings to further aid discoverability (think of them as search keywords).
 
 ### Contact information
 
@@ -63,7 +63,11 @@ We would expect most data products to be of type `dataset`, `raw-data`, or `data
 
 Most of the attributes outlined above are required, however:
 
-- `data-platform.justice.gov.uk//limitations` is optional free text which tells users about what they _can't_ or _shouldn't_ do with this data
+- `data-platform.justice.gov.uk/limitations` is optional free text which tells users about what they _can't_ or _shouldn't_ do with this data
 - `data-platform.justice.gov.uk/product-version` is optional, but recommended as we can provide versioned APIs for your data
 - `data-platform.justice.gov.uk/owner-github-team` is optional - if provided we can provide more advanced analytics for GitHub users
 - `data-platform.justice.gov.uk/product-guidance-url` is optional - if this is provided the data catalogue can link to your guidance (for example a SharePoint page or Google doc)
+
+## Further reading
+
+[Index of documention for data product defintion](../README.md#defining-a-data-product)

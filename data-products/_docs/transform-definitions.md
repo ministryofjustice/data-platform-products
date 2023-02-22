@@ -30,10 +30,16 @@ If your data has not undergone any transformation, we suggest you explicitly inf
 
 Carefully consider if transformations are enhancing the data product for general use, rather than for a single use case.
 
-## Template generation
+<!--## Template generation
 
-Our roadmap contains plans for tools to aid in template generation - for example generating a skeleton `03-transformations.yml` given a `02-data-dictionary.yml` as input.
+Our roadmap contains plans for tools to aid in template generation - for example generating a skeleton `03-transformations.yml` given a `02-data-dictionary.yml` as input.-->
 
 ## Suggesting changes
 
 If you wish to suggest additions or improvements to the cleansing types, please [follow our guidance](https://github.com/ministryofjustice/data-platform-products) on submitting a pull request.
+
+## Further reading
+
+[Index of documention for data product defintion](../README.md#defining-a-data-product)
+
+[Example data product](../_example/)

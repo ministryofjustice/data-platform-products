@@ -101,3 +101,7 @@ Note if `parent-product` is supplied then `source` s ignored.
 
 - `data-platform.justice.gov.uk/status`: use one of "draft", "development", "testing", "production", "sunset", "retired" to indicate to users the status of the data. Can be used in conjunction with `data-platform.justice.gov.uk/allow-derived-products` for non-production data.
 - `data-platform.justice.gov.uk/allow-derived-products` - typically "true" (and "true" if not supplied), but in some cases you may not wish derived products to be created. If the product status attribute is "production", you may be asked to justify disallowing derived products as we want to encourage data reuse.
+
+## Further reading
+
+[Index of documention for data product defintion](../README.md#defining-a-data-product)

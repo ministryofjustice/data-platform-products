@@ -82,12 +82,16 @@ If your data has not undergone any cleansing, we suggest you explicitly inform u
 
 ## Considerations
 
-If possible, it is better to have clean data captured at source. If you are regularly applying certain types of cleaning, consider whether it is possible and practical for additional data validation to be added to the originating system(s).
+Wherever possible, it is better to have clean data captured at source. If you are regularly applying certain types of cleaning, consider whether it is possible and practical for additional data validation to be added to the originating system(s).
 
-## Template generation
+<!--## Template generation
 
-Our roadmap contains plans for tools to aid in template generation - for example generating a skeleton `03-transformations.yml` given a `02-data-dictionary.yml` as input.
+Our roadmap contains plans for tools to aid in template generation - for example generating a skeleton `03-transformations.yml` given a `02-data-dictionary.yml` as input.-->
 
 ## Suggesting changes
 
 If you wish to suggest additions or improvements to the cleansing types, please [follow our guidance](https://github.com/ministryofjustice/data-platform-products) on submitting a pull request.
+
+## Further reading
+
+[Index of documention for data product defintion](../README.md#defining-a-data-product)
