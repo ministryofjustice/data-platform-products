@@ -18,7 +18,6 @@ governance:
   data-platform.justice.gov.uk/protective-marking: "None"
   # Status: please specify draft, development, testing, production, sunset, retired
   data-platform.justice.gov.uk/status: "production"
-  data-platform.justice.gov.uk/allow-derived-products: true
   lineage:
     # E.g. HMCTS, HMPPS, LAA, OPG, HQ, ALB, OGD
     data-platform.justice.gov.uk/organisational-unit: "HMPPS"

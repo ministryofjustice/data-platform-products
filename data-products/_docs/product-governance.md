@@ -11,7 +11,6 @@ governance:
   data-platform.justice.gov.uk/senior-information-risk-owner: "information.asset.owner.name@justice.gov.uk"
   data-platform.justice.gov.uk/protective-marking: "None"
   data-platform.justice.gov.uk/status: "production"
-  data-platform.justice.gov.uk/allow-derived-products: true
   update-frequency:
     data-platform.justice.gov.uk/update-unit: "months"
     data-platform.justice.gov.uk/update-value: 3
@@ -99,8 +98,18 @@ Note if `parent-product` is supplied then `source` s ignored.
 
 ### Other attributes
 
-- `data-platform.justice.gov.uk/status`: use one of "draft", "development", "testing", "production", "sunset", "retired" to indicate to users the status of the data. Can be used in conjunction with `data-platform.justice.gov.uk/allow-derived-products` for non-production data.
-- `data-platform.justice.gov.uk/allow-derived-products` - typically "true" (and "true" if not supplied), but in some cases you may not wish derived products to be created. If the product status attribute is "production", you may be asked to justify disallowing derived products as we want to encourage data reuse.
+- `data-platform.justice.gov.uk/status`: use one of the following to indicate to users the status of the data:
+  - `draft`
+  - `development`
+  - `testing`
+  - `production`
+  - `sunset`
+  - `retired`
+  
+Most data products will be tagged as `production` - the other statuses will flag to users than special handling is required. 
+
+<!-- `data-platform.justice.gov.uk/status`: use one of "draft", "development", "testing", "production", "sunset", "retired" to indicate to users the status of the data. Can be used in conjunction with `data-platform.justice.gov.uk/allow-derived-products` for non-production data.
+- `data-platform.justice.gov.uk/allow-derived-products` - typically "true" (and "true" if not supplied), but in some cases you may not wish derived products to be created. If the product status attribute is "production", you may be asked to justify disallowing derived products as we want to encourage data reuse. -->
 
 ## Further reading
 
