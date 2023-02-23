@@ -49,7 +49,7 @@ If the preferred contact method is email, please provide a group address or shar
 
 Important notifications about your data product are sent to the supplied address, so please ensure it is monitored.
 
-<!-- 
+<!--
 ### Product type
 
 The `data-platform.justice.gov.uk/type` attributes must be one of the following:
