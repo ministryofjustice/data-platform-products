@@ -30,7 +30,7 @@ governance:
 
 - `data-platform.justice.gov.uk/data-controller` is te Data Controller as pertains to the Data Protection Act. This will commonly be "moj" but could be another entity.
 - `data-platform.justice.gov.uk/review-after` - on which date should the governance information be reviewed. Data products owners will be notified of this review window using the contact information supplied in the [data product specification](product-specification.md).
-- `data-platform.justice.gov.uk/siro` should be the email address of the Senior Information Risk Owner for this data.
+- `data-platform.justice.gov.uk/senior-information-risk-owner` should be the email address of the Senior Information Risk Owner for this data.
 - `data-platform.justice.gov.uk/protective-marking` - one of "Official", "Official Sensitive", or "None" (for published data). DO NOT SEND SECRET OR TOP SECRET DATA TO THE PLATFORM.
 
 ### Data retention
@@ -89,7 +89,7 @@ If a data update cycle is missed, data product owners will be notified via the c
 
 It is important to users of the data that they know where it has come from. This is the purpose of the `lineage` collection of attributes. These attributes are generally free text, so you are free to interpret their usage in the way you think is most helpful to users.
 
-- `data-platform.justice.gov.uk/top-level-domain` defines at a high level which part of the organisation the data has come from. For example "HMCTS", "HMPPS", "LAA", "OPG", "HQ"
+- `data-platform.justice.gov.uk/organisational-unit` defines at a high level which part of the organisation the data has come from. For example "HMCTS", "HMPPS", "LAA", "OPG", "HQ"
 - `data-platform.justice.gov.uk/source` - the detailed source of the data. Can be a system such as "NOMIS" or "XHIBIT" or the URL of a statistical publication
 - \- **OR** \-
 - `data-platform.justice.gov.uk/parent-product` - if your data product is based on another data product, please specify its name here. (The "name" as it appears in the list of data platform product folders, not the user-friendly title of the product).
