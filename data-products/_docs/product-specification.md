@@ -15,7 +15,6 @@ specification:
   data-platform.justice.gov.uk//limitations:
   data-platform.justice.gov.uk/product-version: 0.0.1
   data-platform.justice.gov.uk/owner-github-team: "data-platform-admins"
-  data-platform.justice.gov.uk/type: "dataset"
   support:
     data-platform.justice.gov.uk/owner-email: "data-platform@digital.justice.gov.uk"
     data-platform.justice.gov.uk/owner-ms-teams:
@@ -27,7 +26,12 @@ specification:
 
 ### Naming and tagging
 
-The product's `title` must be descriptive and unique - we check for uniqueness when data product requests are created.
+The product's `title` must be descriptive and unique - we check for uniqueness when data product requests are created. This is because:
+
+- The product name is a directory in the data products repository. E.g. 'Your data product' becomes `./data_products/your_data_product/`
+- It will be the root of the API endpoint `https://data-platform.service.justice.gov.uk/api/your-data-product/`
+- Users may see it listed in a directory of products, and multiples of the same title are confusing
+- Users may know a product title well enough to search for it directly
 
 > NOTE: the `product-version` attribute is not yet documented here. We are still determining if this should be provided by the data product owner, or automatically incremented when the data dictionary or other metadata is updated.
 
@@ -45,6 +49,7 @@ If the preferred contact method is email, please provide a group address or shar
 
 Important notifications about your data product are sent to the supplied address, so please ensure it is monitored.
 
+<!-- 
 ### Product type
 
 The `data-platform.justice.gov.uk/type` attributes must be one of the following:
@@ -58,6 +63,8 @@ The `data-platform.justice.gov.uk/type` attributes must be one of the following:
 - `automated-decsion-making`
 
 We would expect most data products to be of type `dataset`, `raw-data`, or `data-enhanced-product` (the latter typically being a data product derived from another data product). The other types are typically outputs _from_ data products, but in some cases you may wish to supply derived or calculated data - for example if the analytics or processing is not currently hosted on the Data Platform.
+
+-->
 
 ### Optional attributes
 
