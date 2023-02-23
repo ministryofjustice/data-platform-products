@@ -21,7 +21,7 @@ governance:
   lineage:
     data-platform.justice.gov.uk/organisational-unit: "HMPPS"
     data-platform.justice.gov.uk/source: "https://www.gov.uk/government/collections/offender-management-statistics-quarterly"
-    data-platform.justice.gov.uk/parent-product:
+    data-platform.justice.gov.uk/parent-products:
 ```
 
 ## Notes
@@ -92,9 +92,9 @@ It is important to users of the data that they know where it has come from. This
 - `data-platform.justice.gov.uk/organisational-unit` defines at a high level which part of the organisation the data has come from. For example "HMCTS", "HMPPS", "LAA", "OPG", "HQ"
 - `data-platform.justice.gov.uk/source` - the detailed source of the data. Can be a system such as "NOMIS" or "XHIBIT" or the URL of a statistical publication
 - \- **OR** \-
-- `data-platform.justice.gov.uk/parent-product` - if your data product is based on another data product, please specify its name here. (The "name" as it appears in the list of data platform product folders, not the user-friendly title of the product).
+- `data-platform.justice.gov.uk/parent-products` - if your data product is based on another data product(s), please specify their name here. (The "name" as it appears in the list of data platform product folders, not the user-friendly title of the product).
 
-Note if `parent-product` is supplied then `source` s ignored.
+Note if `parent-products` is supplied then `source` s ignored.
 
 ### Other attributes
 
