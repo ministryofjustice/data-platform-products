@@ -28,7 +28,7 @@ governance:
 
 ### Ownership and handling attributes
 
-- `data-platform.justice.gov.uk/data-controller` is te Data Controller as pertains to the Data Protection Act. This will commonly be "moj" but could be another entity.
+- `data-platform.justice.gov.uk/data-controller` is the Data Controller as pertains to the Data Protection Act. This will commonly be "moj" but could be another entity.
 - `data-platform.justice.gov.uk/review-after` - on which date should the governance information be reviewed. Data products owners will be notified of this review window using the contact information supplied in the [data product specification](product-specification.md).
 - `data-platform.justice.gov.uk/senior-information-risk-owner` should be the email address of the Senior Information Risk Owner for this data.
 - `data-platform.justice.gov.uk/protective-marking` - one of "Official", "Official Sensitive", or "None" (for published data). DO NOT SEND SECRET OR TOP SECRET DATA TO THE PLATFORM.
