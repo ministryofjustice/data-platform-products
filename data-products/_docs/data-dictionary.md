@@ -4,7 +4,7 @@ The `02-data-dictionary.yml` file should contain a detailed specification of the
 
 - table names, column names and column types (for tabular data);
 - or domains, classes and attributes (for domain modelled data)
-  
+
 **Unlike** some other schemas, we also ask that you **describe** the components of the data so that users understand what they are.
 
 ## Top-level attributes
