@@ -1,6 +1,6 @@
 # Data product specification
 
-Use the `00-specification.yml` file in your data product definition folder to provide an overall title and description for your data product, and tags to help users find it. If you wish, you can also write a short value proposition outling _why_ the product exists and what data analysis or visualisation might arise from it.
+Use the `00-specification.yml` file in your data product definition folder to provide a name, title and description for your data product, and tags to help users find it. If you wish, you can also write a short value proposition outling _why_ the product exists and what data analysis or visualisation might arise from it.
 
 You should also provide contact information for the product.
 
@@ -8,6 +8,7 @@ You should also provide contact information for the product.
 
 ```yaml
 specification:
+  data-platform.justice.gov.uk/name: "_example"
   data-platform.justice.gov.uk/title: "Example Data Product"
   data-platform.justice.gov.uk/description: "Example Data Product contains published prison population from 2001 to present"
   data-platform.justice.gov.uk/product-tags: ["HMPPS", "prisons", "published data", "national statistics"]
@@ -26,12 +27,19 @@ specification:
 
 ### Naming and tagging
 
-The product's `title` must be descriptive and unique - we check for uniqueness when data product requests are created. This is because:
+The product's `name` must be reasonably short and unique - we check for uniqueness when data product requests are created. This is because:
 
-- The product name is a directory in the data products repository. E.g. 'Your data product' becomes `./data_products/your_data_product/`
+- The product name is a directory in the data products repository. E.g. 'your_data_product' becomes `./data_products/your_data_product/`
 - It will be the root of the API endpoint `https://data-platform.service.justice.gov.uk/api/your-data-product/`
+
+You must only use alphanumeric characters or underscores. Don't use spaces - we will replace spaces with underscores.
+
+The product `title` should be the human-readable version of the name. Keep it short but meaningful. We suggest product titles are unique, since:
+
 - Users may see it listed in a directory of products, and multiples of the same title are confusing
 - Users may know a product title well enough to search for it directly
+
+The product `description` can be longer, give more information and will help users find your data.
 
 > NOTE: the `product-version` attribute is not yet documented here. We are still determining if this should be provided by the data product owner, or automatically incremented when the data dictionary or other metadata is updated.
 
