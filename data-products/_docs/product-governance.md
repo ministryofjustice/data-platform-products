@@ -8,7 +8,7 @@ The purpose of the `01-governance.yml` file in your data product definition fold
 governance:
   data-platform.justice.gov.uk/data-controller: "moj"
   data-platform.justice.gov.uk/review-after: "2023-12-31"
-  data-platform.justice.gov.uk/siro: "information.asset.owner.name@justice.gov.uk"
+  data-platform.justice.gov.uk/senior-information-risk-owner: "information.asset.owner.name@justice.gov.uk"
   data-platform.justice.gov.uk/protective-marking: "None"
   data-platform.justice.gov.uk/status: "production"
   data-platform.justice.gov.uk/allow-derived-products: true
@@ -20,7 +20,7 @@ governance:
     data-platform.justice.gov.uk/retention-unit: "years"
     data-platform.justice.gov.uk/retention-value: 25
   lineage:
-    data-platform.justice.gov.uk/top-level-domain: "HMPPS"
+    data-platform.justice.gov.uk/organisational-unit: "HMPPS"
     data-platform.justice.gov.uk/source: "https://www.gov.uk/government/collections/offender-management-statistics-quarterly"
     data-platform.justice.gov.uk/parent-product:
 ```

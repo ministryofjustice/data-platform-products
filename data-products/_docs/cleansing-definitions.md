@@ -78,7 +78,7 @@ Our [example data product](./_example/) contains a few more examples.
 
 ### Data with no cleansing applied
 
-If your data has not undergone any cleansing, we suggest you explicitly inform users of this by adding `type: none` for each of your tables to make this clear to users. Otherwise we will assume there has been undocumented cleansing. An exception is made for tables [defined as reference data](./_example/02-data-dictionary.yml#L67) - here we assume no cleansing has been applied if there is no cleansing specified.
+If your data has not undergone any cleansing, we suggest you explicitly inform users of this by adding `type: none` to make this clear to users. Otherwise we will assume there has been undocumented cleansing. An exception is made for tables [defined as reference data](./_example/02-data-dictionary.yml#L67) - here we assume no cleansing has been applied if there is no cleansing specified.
 
 ## Considerations
 

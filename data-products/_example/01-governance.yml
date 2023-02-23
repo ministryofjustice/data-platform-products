@@ -2,7 +2,7 @@ governance:
   # data-controller - who ultimately owns / controls this data (this could be another govenment department)
   data-platform.justice.gov.uk/data-controller: "moj"
   data-platform.justice.gov.uk/review-after: "2023-12-31"
-  data-platform.justice.gov.uk/siro: "information.asset.owner@justice.gov.uk"
+  data-platform.justice.gov.uk/senior-information-risk-owner: "information.asset.owner@justice.gov.uk"
   retention:
     # retention-strategy: "date-uploaded", "data-date-key", or "forever"
     data-platform.justice.gov.uk/retention-strategy: "forever"
@@ -21,7 +21,7 @@ governance:
   data-platform.justice.gov.uk/allow-derived-products: true
   lineage:
     # E.g. HMCTS, HMPPS, LAA, OPG, HQ, ALB, OGD
-    data-platform.justice.gov.uk/top-level-domain: "HMPPS"
+    data-platform.justice.gov.uk/organisational-unit: "HMPPS"
     # Specify source OR parent-product
     # for example Prison NOMIS, Delius, XHibit or a URL
     data-platform.justice.gov.uk/source: "https://www.gov.uk/government/collections/offender-management-statistics-quarterly"
