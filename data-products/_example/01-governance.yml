@@ -24,5 +24,5 @@ governance:
     # Specify source OR parent-products
     # for example Prison NOMIS, Delius, XHibit or a URL
     data-platform.justice.gov.uk/source: "https://www.gov.uk/government/collections/offender-management-statistics-quarterly"
-    # If your data product is based on another data product, please specify its name here.
-    data-platform.justice.gov.uk/parent-products:
+    # If your data product is based on other data products, please specify their names here.
+    data-platform.justice.gov.uk/parent-products: ["parent_product", "other_parent_product"]

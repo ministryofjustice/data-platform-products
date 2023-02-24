@@ -21,7 +21,7 @@ governance:
   lineage:
     data-platform.justice.gov.uk/organisational-unit: "HMPPS"
     data-platform.justice.gov.uk/source: "https://www.gov.uk/government/collections/offender-management-statistics-quarterly"
-    data-platform.justice.gov.uk/parent-products:
+    data-platform.justice.gov.uk/parent-products: ["parent_product", "other_parent_product"]
 ```
 
 ## Notes
