@@ -1,6 +1,6 @@
 # Data product specification
 
-Use the `00-specification.yml` file in your data product definition folder to provide an overall title and description for your data product, and tags to help users find it. If you wish, you can also write a short value proposition outling _why_ the product exists and what data analysis or visualisation might arise from it.
+Use the `00-specification.yml` file in your data product definition folder to provide an overall title and description for your data product, and tags to help users find it. If you wish, you can also write a short value proposition outling _why_ the product exists and what data analysis or visualisation might arise from it. In general, the `00-specification.yml` file contains information that users of the data will see.
 
 You should also provide contact information for the product.
 
@@ -12,6 +12,7 @@ specification:
   data-platform.justice.gov.uk/description: "Example Data Product contains published prison population from 2001 to present"
   data-platform.justice.gov.uk/product-tags: ["HMPPS", "prisons", "published data", "national statistics"]
   data-platform.justice.gov.uk/value-proposition: "Adding published prison population allows for a reusable, consistent, safely sharable resource for this commonly used data"
+  data-platform.justice.gov.uk/status: "production"
   data-platform.justice.gov.uk//limitations:
   data-platform.justice.gov.uk/product-version: 0.0.1
   data-platform.justice.gov.uk/owner-github-team: "data-platform-admins"
@@ -74,7 +75,18 @@ Most of the attributes outlined above are required, however:
   - > NOTE: if your data product is still in development, or has draft status, please flag this using the `status` attribute in the [governance spec](./product-governance.md)
 - `data-platform.justice.gov.uk/owner-github-team` is optional - if provided we can provide more advanced analytics for GitHub users
 - `data-platform.justice.gov.uk/product-guidance-url` is optional - if this is provided the data catalogue can link to your guidance (for example a SharePoint page or Google doc)
-<!--- `data-platform.justice.gov.uk/product-version` is optional, but recommended as we can provide versioned APIs for your data-->
+
+### Product status
+
+- `data-platform.justice.gov.uk/status`: use one of the following to indicate to users the status of the data:
+  - `draft`
+  - `development`
+  - `testing`
+  - `production`
+  - `sunset`
+  - `retired`
+
+Most data products will be tagged as `production` - the other statuses will flag to users that special handling is required. If `status` is omitted, we assume it is `production`.
 
 ## Further reading
 

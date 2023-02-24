@@ -10,7 +10,6 @@ governance:
   data-platform.justice.gov.uk/review-after: "2023-12-31"
   data-platform.justice.gov.uk/senior-information-risk-owner: "information.asset.owner.name@justice.gov.uk"
   data-platform.justice.gov.uk/protective-marking: "None"
-  data-platform.justice.gov.uk/status: "production"
   update-frequency:
     data-platform.justice.gov.uk/update-unit: "months"
     data-platform.justice.gov.uk/update-value: 3
@@ -94,22 +93,8 @@ It is important to users of the data that they know where it has come from. This
 - \- **OR** \-
 - `data-platform.justice.gov.uk/parent-product` - if your data product is based on another data product, please specify its name here. (The "name" as it appears in the list of data platform product folders, not the user-friendly title of the product).
 
-Note if `parent-product` is supplied then `source` s ignored.
+Note if `parent-product` is supplied then `source` is ignored.
 
-### Other attributes
-
-- `data-platform.justice.gov.uk/status`: use one of the following to indicate to users the status of the data:
-  - `draft`
-  - `development`
-  - `testing`
-  - `production`
-  - `sunset`
-  - `retired`
-
-Most data products will be tagged as `production` - the other statuses will flag to users than special handling is required.
-
-<!-- `data-platform.justice.gov.uk/status`: use one of "draft", "development", "testing", "production", "sunset", "retired" to indicate to users the status of the data. Can be used in conjunction with `data-platform.justice.gov.uk/allow-derived-products` for non-production data.
-- `data-platform.justice.gov.uk/allow-derived-products` - typically "true" (and "true" if not supplied), but in some cases you may not wish derived products to be created. If the product status attribute is "production", you may be asked to justify disallowing derived products as we want to encourage data reuse. -->
 
 ## Further reading
 
