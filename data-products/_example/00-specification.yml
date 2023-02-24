@@ -1,4 +1,5 @@
 specification:
+  data-platform.justice.gov.uk/name: "_example"
   # A good title and description will help users find your data
   data-platform.justice.gov.uk/title: "Example Data Product"
   data-platform.justice.gov.uk/description: "Example Data Product contains published prison population from 2001 to present"
