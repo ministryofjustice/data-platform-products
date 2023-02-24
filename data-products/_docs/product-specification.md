@@ -70,7 +70,7 @@ We would expect most data products to be of type `dataset`, `raw-data`, or `data
 
 Most of the attributes outlined above are required, however:
 
-- `data-platform.justice.gov.uk/limitations` is optional free text which tells users about what they _can't_ or _shouldn't_ do with this data. If your data product has undergone a Data Protection Impact Assesment (DPIA) which highlights inappropriate use cases, you should list those here. 
+- `data-platform.justice.gov.uk/limitations` is optional free text which tells users about what they _can't_ or _shouldn't_ do with this data. If your data product has undergone a Data Protection Impact Assesment (DPIA) which highlights inappropriate use cases, you should list those here.
   - > NOTE: if your data product is still in development, or has draft status, please flag this using the `status` attribute in the [governance spec](./product-governance.md)
 - `data-platform.justice.gov.uk/owner-github-team` is optional - if provided we can provide more advanced analytics for GitHub users
 - `data-platform.justice.gov.uk/product-guidance-url` is optional - if this is provided the data catalogue can link to your guidance (for example a SharePoint page or Google doc)
