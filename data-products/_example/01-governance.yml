@@ -21,8 +21,8 @@ governance:
   lineage:
     # E.g. HMCTS, HMPPS, LAA, OPG, HQ, ALB, OGD
     data-platform.justice.gov.uk/organisational-unit: "HMPPS"
-    # Specify source OR parent-product
+    # Specify source OR parent-products
     # for example Prison NOMIS, Delius, XHibit or a URL
     data-platform.justice.gov.uk/source: "https://www.gov.uk/government/collections/offender-management-statistics-quarterly"
-    # If your data product is based on another data product, please specify its name here.
-    data-platform.justice.gov.uk/parent-product:
+    # If your data product is based on other data products, please specify their names here.
+    data-platform.justice.gov.uk/parent-products: ["parent_product", "other_parent_product"]
