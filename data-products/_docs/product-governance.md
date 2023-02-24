@@ -95,7 +95,6 @@ It is important to users of the data that they know where it has come from. This
 
 Note if `parent-product` is supplied then `source` is ignored.
 
-
 ## Further reading
 
 [Index of documention for data product defintion](../README.md#defining-a-data-product)
