@@ -52,7 +52,7 @@ Product `tags` are an array array of quoted strings to further aid discoverabili
 
 Using the `management` attribute, you must supply the name of a group of users who will have permisson to manage this data product. Use either (or both) of the following:
 
-- `data-platform.justice.gov.uk/owner-aad-group` - the name Azure Active Directory (AAD) security group
+- `data-platform.justice.gov.uk/owner-aad-group` - the name of a Azure Active Directory (AAD) security group
 - `data-platform.justice.gov.uk/owner-github-team` - the name of a GitHub team
 
 Note these are **groups** of users, not the name of an individual.
