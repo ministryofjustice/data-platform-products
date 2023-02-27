@@ -6,6 +6,8 @@ specification:
   # tags are an array of quoted strings to further aid discoverability - e.g. ["keyword1", "keyword2", "keyword3"]
   data-platform.justice.gov.uk/product-tags: ["HMPPS", "prisons", "published data", "national statistics"]
   data-platform.justice.gov.uk/value-proposition: "Adding published prison population allows for a reusable, consistent, sharable resource for this commonly used data"
+  # status: please specify draft, development, testing, production, sunset, retired
+  data-platform.justice.gov.uk/status: "production"
   # limitations are optional, but you might want to tell users what they CAN'T do with this data
   data-platform.justice.gov.uk//limitations:
   # we recommend you version the data product. adding new data does not change the version, but changing the data definition should.

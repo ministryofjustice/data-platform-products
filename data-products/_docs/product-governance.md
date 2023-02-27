@@ -10,7 +10,6 @@ governance:
   data-platform.justice.gov.uk/review-after: "2023-12-31"
   data-platform.justice.gov.uk/senior-information-risk-owner: "information.asset.owner.name@justice.gov.uk"
   data-platform.justice.gov.uk/protective-marking: "None"
-  data-platform.justice.gov.uk/status: "production"
   update-frequency:
     data-platform.justice.gov.uk/update-unit: "months"
     data-platform.justice.gov.uk/update-value: 3
@@ -94,7 +93,7 @@ It is important to users of the data that they know where it has come from. This
 - \- **OR** \-
 - `data-platform.justice.gov.uk/parent-products` - if your data product is based on another data product(s), please specify their name here. (The "name" as it appears in the list of data platform product folders, not the user-friendly title of the product).
 
-Note if `parent-products` is supplied then `source` s ignored.
+Note if `parent-product` is supplied then `source` is ignored.
 
 ### Other attributes
 
