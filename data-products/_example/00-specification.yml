@@ -12,8 +12,10 @@ specification:
   data-platform.justice.gov.uk//limitations:
   # we recommend you version the data product. adding new data does not change the version, but changing the data definition should.
   data-platform.justice.gov.uk/product-version: 0.0.1
-  #GitHub team is optional but we can provide more advanced analytics for GitHub users
-  data-platform.justice.gov.uk/owner-github-team: "data-platform-admins"
+  management:
+    # please provide an AAD (Azure Active Directory) group or GitHub team which has permission to make changes to this product
+    data-platform.justice.gov.uk/owner-aad-group: "data-platform-admins"
+    data-platform.justice.gov.uk/owner-github-team: "data-platform-admins"
   support:
     # Please provide at least one contact - group email, Slack channel or MS Teams (NOT an individual's email address please)
     data-platform.justice.gov.uk/owner-email: "data-platform@digital.justice.gov.uk"

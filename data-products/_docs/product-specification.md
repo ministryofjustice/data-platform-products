@@ -16,7 +16,9 @@ specification:
   data-platform.justice.gov.uk/status: "production"
   data-platform.justice.gov.uk//limitations:
   data-platform.justice.gov.uk/product-version: 0.0.1
-  data-platform.justice.gov.uk/owner-github-team: "data-platform-admins"
+  management:
+    data-platform.justice.gov.uk/owner-aad-group: "data-platform-admins"
+    data-platform.justice.gov.uk/owner-github-team: "data-platform-admins"
   support:
     data-platform.justice.gov.uk/owner-email: "data-platform@digital.justice.gov.uk"
     data-platform.justice.gov.uk/owner-ms-teams:
@@ -45,6 +47,15 @@ The product `description` can be longer, give more information and will help use
 > NOTE: the `product-version` attribute is not yet documented here. We are still determining if this should be provided by the data product owner, or automatically incremented when the data dictionary or other metadata is updated.
 
 Product `tags` are an array array of quoted strings to further aid discoverability (think of them as search keywords).
+
+### Management access
+
+Using the `management` attribute, you must supply the name of a group of users who will have permisson to manage this data product. Use either (or both) of the following:
+
+- `data-platform.justice.gov.uk/owner-aad-group` - the name of a Azure Active Directory (AAD) security group
+- `data-platform.justice.gov.uk/owner-github-team` - the name of a GitHub team
+
+Note these are **groups** of users, not the name of an individual.
 
 ### Contact information
 
