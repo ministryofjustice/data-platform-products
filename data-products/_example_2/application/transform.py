@@ -25,12 +25,12 @@ def get_table():
 
 def generate_report():
     # group by establishment, religion, offence and get count offence
-    df = get_table()
-    df1 = df.groupby(["Establishment", "Religion", "Offence"])["Offence"].count()
-    df1.columns = ["Establishment", "Religion", "Offence", "Count"]
+    raw_data = get_table()
+    transformed_data = raw_data.groupby(["Establishment", "Religion", "Offence"])["Offence"].count()
+    transformed_data.columns = ["Establishment", "Religion", "Offence", "Count"]
 
     logging.info("Data is transformed and can now be persisted somewhere")
-    return df1
+    return transformed_data
 
 
 def persist_data():
