@@ -66,7 +66,7 @@ This defines one table called "population_by_offence", with three columns - "Off
 
 For data with a time dimension (for example a date column), we can enforce retention periods and inform users of the range of available data. This is specified using the `primary-period` attribute, with a value of `true`.
 
-For a more complete example, see [02-data-dictionary](../_example/02-data-dictionary.yml) in the example data product.
+For a more complete example, see [02-data-dictionary](../_example/metadata/02-data-dictionary.yml) in the example data product.
 
 ## Update strategies
 
