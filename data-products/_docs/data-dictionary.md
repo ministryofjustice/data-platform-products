@@ -93,11 +93,15 @@ If `update-strategy` is omitted, the platform assumes the `all-dimensions` strat
 
 ## Schema generation articles and utilities
 
-You can generate your initial data dictionary by hand, or use a tool. Here we link to a few tools. Most of these will generate a JSON schema - the Data Platform format is YAML since it strikes a nice balance between machine and human readability, and is (arguably) easier to hand edit.
+You can generate your initial data dictionary by hand, or use a tool. Here we link to a few tools.
 
-You can find utilities to generate YAML from JSON, since one is a subset of the other - for example here is one [browser based tool](https://www.json2yaml.com/).
+If your chosen tool generates JSON, you can find utilities to generate YAML from JSON, since one is a subset of the other - for example here is one [browser based tool](https://www.json2yaml.com/). It also common for schema generation tools to export XML - you can also find free-to-use XML to YAML conversion utilities online.
 
 Our favourite tool for editing YAML is [Visual Studio Code](https://code.visualstudio.com/) with the [YAML plugin](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml).
+
+### SchemaSpy
+
+[SchemaSpy](https://github.com/schemaspy/schemaspy) is an open source tool for analysing and reporting on a database's structure.
 
 ### PostgreSQL
 
@@ -107,9 +111,9 @@ Our favourite tool for editing YAML is [Visual Studio Code](https://code.visuals
 
 [An MSSQL Tips article on using SQL to generate a JSON schema](https://www.mssqltips.com/sqlservertip/6270/save-sql-server-database-structure-as-json/)
 
-### Oracle
+<!-- ### Oracle
 
-We havent yet found a JSON schema generator for Oracle - please let us know if you know of one (or want to create one!). The SQL Server approach above may be adaptable to Oracle.
+We havent yet found a JSON schema generator for Oracle - please let us know if you know of one (or want to create one!). The SQL Server approach above may be adaptable to Oracle. -->
 
 ## Further reading
 
