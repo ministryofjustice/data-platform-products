@@ -4,6 +4,8 @@ from sqlalchemy import create_engine
 import logging
 
 logging.basicConfig()
+
+# This is a temporary solution, see DLAB-33 and DLAB-34 for more details.
 DB_ENDPOINT = os.environ.get("DB_ENDPOINT")
 DB_USERNAME = os.environ.get("DB_USERNAME")
 DB_PASSWORD = os.environ.get("DB_PASSWORD")
