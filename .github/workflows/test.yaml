@@ -22,8 +22,7 @@ jobs:
 
       - name: Install Python dependencies
         run: |
-          
-          pip install -r data-products/_example_2/requirements.txt
+          pip install --requirement data-products/_example_2/requirements.txt
       - name: Run tests with pytest
         run: |
           pytest data-products/_example_2/tests/ -vv;
