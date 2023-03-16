@@ -1,0 +1,29 @@
+name: Test
+on:
+  - pull_request
+
+jobs:
+  preview:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.7, 3.8]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Python dependencies
+        run: |
+          
+          pip install -r data-products/_example_2/requirements.txt
+      - name: Run tests with pytest
+        run: |
+          if [ -d tests ]; then pytest data-products/_example_2/tests/ -vv; fi
