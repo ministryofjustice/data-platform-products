@@ -24,14 +24,15 @@ def get_table():
 
     return pd.read_sql_table("adjudications", engine)
 
-#def get_table():
+# def get_table():
 #    return pd.read_csv("AdjudicationsQ32022.csv")
 
 
 def generate_report():
     # group by establishment, religion, offence and get count offence
     raw_data = get_table()
-    transformed_data = raw_data.value_counts(subset=["Establishment", "Religion", "Offence"], sort=False).reset_index()
+    transformed_data = raw_data.value_counts(
+        subset=["Establishment", "Religion", "Offence"], sort=False).reset_index()
     transformed_data.columns = [
         "Establishment", "Religion", "Offence", "Count"]
 
