@@ -1,6 +1,13 @@
-name: Test
+---
+name: Data Product - example_2 - Test
+
 on:
-  - pull_request
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/<this workflow file>
+      - data-products/_example_2/**
 
 jobs:
   preview:
