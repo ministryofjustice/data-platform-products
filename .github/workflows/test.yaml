@@ -11,7 +11,7 @@ jobs:
       matrix:
         python-version: [3.10.10]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # v3.4.0
         with:
           fetch-depth: 1
 
