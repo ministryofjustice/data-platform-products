@@ -13,14 +13,15 @@ jobs:
   preview:
     name: Test
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: data-products/_example_2
     strategy:
       max-parallel: 4
       matrix:
         python-version: [3.10.10]
     steps:
       - uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # v3.4.0
-        with:
-          fetch-depth: 1
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@d27e3f3d7c64b4bbf8e4abfb9b63b83e846e0435 # v4.5.0
@@ -29,7 +30,7 @@ jobs:
 
       - name: Install Python dependencies
         run: |
-          pip install --requirement data-products/_example_2/requirements.txt
+          pip install --requirement requirements.txt
       - name: Run tests with pytest
         run: |
-          pytest data-products/_example_2/tests/ -vv;
+          pytest tests/ -vv;
