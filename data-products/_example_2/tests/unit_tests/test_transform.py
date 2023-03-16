@@ -1,5 +1,5 @@
 from application.transform import generate_report
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
 import pandas as pd
 
 
