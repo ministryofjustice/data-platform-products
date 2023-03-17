@@ -1,2 +1,4 @@
-pandas==1.5.3
-SQLAlchemy==2.0.5.post1
+pandas
+SQLAlchemy
+psycopg2-binary
+pytest

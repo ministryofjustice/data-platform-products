@@ -4,6 +4,8 @@ from sqlalchemy import create_engine
 import logging
 
 logging.basicConfig()
+
+# This is a temporary solution, see DLAB-33 and DLAB-34 for more details.
 DB_ENDPOINT = os.environ.get("DB_ENDPOINT")
 DB_USERNAME = os.environ.get("DB_USERNAME")
 DB_PASSWORD = os.environ.get("DB_PASSWORD")
@@ -22,12 +24,15 @@ def get_table():
 
     return pd.read_sql_table("adjudications", engine)
 
+# def get_table():
+#    return pd.read_csv("AdjudicationsQ32022.csv")
+
 
 def generate_report():
     # group by establishment, religion, offence and get count offence
     raw_data = get_table()
-    transformed_data = raw_data.groupby(["Establishment", "Religion", "Offence"])[
-        "Offence"].count()
+    transformed_data = raw_data.value_counts(
+        subset=["Establishment", "Religion", "Offence"], sort=False).reset_index()
     transformed_data.columns = [
         "Establishment", "Religion", "Offence", "Count"]
 

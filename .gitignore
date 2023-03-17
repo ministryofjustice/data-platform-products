@@ -47,3 +47,7 @@ venv/
 env/
 .vscode
 *.code-workspace
+
+
+# Pytest-Cache
+__pycache__/
