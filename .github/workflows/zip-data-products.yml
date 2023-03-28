@@ -37,7 +37,7 @@ jobs:
 
       - name: Install Python dependencies
         run: |
-          pip install --requirement requirements.txt
+          pip install -r data-products/_example_2/requirements.txt
       - name: Zip data product
         run: |
           python package_data_product.py
