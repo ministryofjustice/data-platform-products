@@ -46,7 +46,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: arn:aws:iam::013433889002:role/data-platform-labs-github-actions
-          aws-region: eu-west-1
+          aws-region: eu-west-2
           role-duration-seconds: 3600
           role-session-name: githubactionsiamsession
       - name: Push to s3
