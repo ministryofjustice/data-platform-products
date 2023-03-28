@@ -47,5 +47,5 @@ jobs:
           AWS_ACCESS_KEY_KEY: ${{ vars.CICD_MEMBER_USER_KEY }}
           BUCKET_NAME: data-platform-products-sandbox20230328133227039700000001
         run: |
-          aws s3 sync . s3://$(BUCKET_NAME)/_example_2/code/extraction_timestamp=$(date +%Y%m%d%H%M%S)/ \
+          aws s3 sync . s3://$BUCKET_NAME/_example_2/code/extraction_timestamp=$(date +%Y%m%d%H%M%S)/ \
             --exclude '*' --include 'data_product__example_2.zip'
