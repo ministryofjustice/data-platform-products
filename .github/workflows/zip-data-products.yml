@@ -40,7 +40,7 @@ jobs:
           pip install -r data-products/_example_2/requirements.txt
       - name: Zip data product
         run: |
-          python package_data_product.py
+          python data-products/package_data_product.py
       - name: Push to s3
         env:
           AWS_ACCESS_KEY_ID: ${{ vars.CICD_MEMBER_USER_ID }}
