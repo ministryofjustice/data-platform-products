@@ -1,0 +1,43 @@
+---
+name: Data Product - example_2 - Test
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - data-products/**
+
+jobs:
+  preview:
+    name: Test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: data-products
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.10.10]
+    steps:
+      - uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # v3.4.0
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@d27e3f3d7c64b4bbf8e4abfb9b63b83e846e0435 # v4.5.0
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Python dependencies
+        run: |
+          pip install --requirement requirements.txt
+      - name: Zip data product
+        run: |
+          python package_data_product.py
+      - name: Push to s3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ vars.CICD_MEMBER_USER_ID }}
+          AWS_ACCESS_KEY_KEY: ${{ vars.CICD_MEMBER_USER_KEY }}
+          BUCKET_NAME: data-platform-products-sandbox20230328133227039700000001
+        run: |
+          aws s3 sync . s3://$(BUCKET_NAME)/_example_2/code/extraction_timestamp=$(date +%Y%m%d%H%M%S)/ \
+            --exclude '*' --include 'data_product__example_2.zip'
