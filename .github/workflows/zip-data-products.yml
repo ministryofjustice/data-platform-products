@@ -8,13 +8,6 @@ on:
     paths:
       - 'data-products/**'
       - '.github/workflows/zip-data-products.yml'
-  pull_request:
-    branches:
-      - main
-    types: [opened, edited, reopened, synchronize]
-    paths:
-      - 'data-products/**'
-      - '.github/workflows/zip-data-products.yml'
 
 jobs:
   preview:
