@@ -27,6 +27,9 @@ logging.basicConfig()
 def get_table():
     return pd.read_csv("AdjudicationsQ32022.csv")
 
+# def get_table():
+#    return pd.read_csv("AdjudicationsQ32022.csv")
+
 
 def generate_report():
     # group by establishment, religion, offence and get count offence
