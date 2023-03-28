@@ -50,11 +50,11 @@ jobs:
           role-duration-seconds: 3600
           role-session-name: githubactionsiamsession
       - name: Push to s3
-#         env:
+        env:
 #           AWS_ACCESS_KEY_ID: ${{ secrets.CICD_MEMBER_USER_ID }}
 #           AWS_SECRET_ACCESS_KEY: ${{ secrets.CICD_MEMBER_USER_KEY }}
 #           AWS_DEFAULT_REGION: eu-west-2
-#           BUCKET_NAME: data-platform-products-sandbox20230328133227039700000001
+          BUCKET_NAME: data-platform-products-sandbox20230328133227039700000001
         run: |
           aws s3 sync . s3://$BUCKET_NAME/_example_2/code/extraction_timestamp=$(date +%Y%m%d%H%M%S)/ \
             --exclude '*' --include 'data_product__example_2.zip'
