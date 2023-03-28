@@ -44,7 +44,7 @@ jobs:
       - name: Push to s3
         env:
           AWS_ACCESS_KEY_ID: ${{ vars.CICD_MEMBER_USER_ID }}
-          AWS_ACCESS_KEY_KEY: ${{ vars.CICD_MEMBER_USER_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ vars.CICD_MEMBER_USER_KEY }}
           AWS_DEFAULT_REGION: eu-west-2
           BUCKET_NAME: data-platform-products-sandbox20230328133227039700000001
         run: |
