@@ -1,3 +1,4 @@
+---
 name: Data Product - example_2 - Test
 
 on:
@@ -6,6 +7,7 @@ on:
       - main
     paths:
       - .github/workflows/data-product-example-2-test.yaml
+      - data-products/_example_2/**
 
 jobs:
   preview:
