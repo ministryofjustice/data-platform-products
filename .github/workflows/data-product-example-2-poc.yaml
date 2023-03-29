@@ -13,8 +13,8 @@ on:
       - main
     types: [opened, edited, reopened, synchronize]
     paths:
-      - "data-products/**"
-      - ".github/workflows/zip-data-products.yml"
+      - "data-products/_example_2/**"
+      - ".github/workflows/data-product-example-2-poc.yaml"
 
 jobs:
   test:
