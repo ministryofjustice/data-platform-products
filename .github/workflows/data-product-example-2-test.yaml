@@ -11,8 +11,7 @@ on:
   workflow_call:
 
 jobs:
-  preview:
-    name: Test
+  test:
     runs-on: ubuntu-latest
     defaults:
       run:
