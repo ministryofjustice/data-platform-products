@@ -3,11 +3,18 @@ name: POC - zip and upload _example_2
 
 on:
   push:
-    # branches:
-    #   - main
+    branches:
+      - main
     paths:
       - "data-products/_example_2/**"
       - ".github/workflows/data-product-example-2-poc.yaml"
+  pull_request:
+    branches:
+      - main
+    types: [opened, edited, reopened, synchronize]
+    paths:
+      - "data-products/**"
+      - ".github/workflows/zip-data-products.yml"
 
 jobs:
   test:
