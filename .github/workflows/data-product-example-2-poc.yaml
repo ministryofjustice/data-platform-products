@@ -8,13 +8,6 @@ on:
     paths:
       - "data-products/_example_2/**"
       - ".github/workflows/data-product-example-2-poc.yaml"
-  pull_request:
-    branches:
-      - main
-    types: [opened, edited, reopened, synchronize]
-    paths:
-      - "data-products/_example_2/**"
-      - ".github/workflows/data-product-example-2-poc.yaml"
 
 jobs:
   test:
