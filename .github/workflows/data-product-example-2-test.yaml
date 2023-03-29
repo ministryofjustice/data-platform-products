@@ -3,8 +3,8 @@ name: Data Product - example_2 - Test
 
 on:
   pull_request:
-    # branches:
-    #   - main
+    branches:
+      - main
     paths:
       - .github/workflows/data-product-example-2-test.yaml
       - data-products/_example_2/**
