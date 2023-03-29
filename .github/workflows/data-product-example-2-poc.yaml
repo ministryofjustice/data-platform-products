@@ -11,7 +11,7 @@ on:
 
 jobs:
   test:
-    uses: .github/workflows/data-product-example-2-test.yaml
+    uses: ./.github/workflows/data-product-example-2-test.yaml
 
   upload:
     name: Zip and upload
