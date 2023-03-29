@@ -3,28 +3,32 @@ name: POC - zip and upload _example_2
 
 on:
   push:
-    branches:
-      - main
+    # branches:
+    #   - main
     paths:
-      - 'data-products/**'
-      - '.github/workflows/zip-data-products.yml'
+      - "data-products/_example_2/**"
+      - ".github/workflows/data-product-example-2-poc.yaml"
 
 jobs:
-  preview:
-    name: Test
+  test:
+    uses: .github/workflows/data-product-example-2-test.yaml
+
+  upload:
+    name: Zip and upload
     runs-on: ubuntu-latest
+    needs: test
     permissions:
       id-token: write # This is required for requesting the JWT
       contents: read # This is required for actions/checkout
     defaults:
       run:
-        working-directory: data-products
+        working-directory: data-products/_example_2
     strategy:
       max-parallel: 4
       matrix:
         python-version: [3.10.10]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # v3.4.0
         with:
           fetch-depth: 2
       - name: Set up Python ${{ matrix.python-version }}
@@ -32,7 +36,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install Python dependencies
-        run: pip install -r _example_2/requirements.txt
+        run: pip install -r requirements.txt
       - name: Zip data product
         run: python package_data_product.py
       - name: OIDC Authentication
