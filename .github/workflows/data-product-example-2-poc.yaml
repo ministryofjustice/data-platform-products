@@ -19,22 +19,17 @@ jobs:
     needs: test
     permissions:
       id-token: write # This is required for requesting the JWT
-      contents: read # This is required for actions/checkout
     defaults:
       run:
         working-directory: data-products/_example_2
-    strategy:
-      max-parallel: 4
-      matrix:
-        python-version: [3.10.10]
     steps:
       - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
         with:
           fetch-depth: 2
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python 3.10.10
         uses: actions/setup-python@d27e3f3d7c64b4bbf8e4abfb9b63b83e846e0435 # v4.5.0
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: 3.10.10
       - name: Install Python dependencies
         run: pip install -r requirements.txt
       - name: Zip data product
@@ -50,5 +45,5 @@ jobs:
         env:
           BUCKET_NAME: data-platform-products-sandbox20230328133227039700000001
         run: |
-          aws s3 sync . s3://$BUCKET_NAME/_example_2/code/extraction_timestamp=$(date +%Y%m%d%H%M%S)/ \
+          aws s3 sync . s3://$BUCKET_NAME/code/_example_2/ \
             --exclude '*' --include 'data_product__example_2.zip'
