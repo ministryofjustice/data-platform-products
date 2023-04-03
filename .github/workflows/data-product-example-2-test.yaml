@@ -8,10 +8,10 @@ on:
     paths:
       - .github/workflows/data-product-example-2-test.yaml
       - data-products/_example_2/**
+  workflow_call:
 
 jobs:
-  preview:
-    name: Test
+  test:
     runs-on: ubuntu-latest
     defaults:
       run:
