@@ -32,4 +32,4 @@ class TestTransform(object):
                          "Count": [1, 1, 1, 1]
                          }
         expected = pd.DataFrame.from_dict(expected_data)
-        pd.testing.assert_frame_equal(generate_report(), expected)
+        pd.testing.assert_frame_equal(generate_report('fake_bucket', 'fake_key'), expected)
