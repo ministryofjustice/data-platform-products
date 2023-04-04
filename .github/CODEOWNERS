@@ -1,3 +1,5 @@
-# Add a team or username to this file
-# Example:
-# *   @ministryofjustice/operations-engineering
+*  @ministryofjustice/data-tech-archs
+/.github/ @ministryofjustice/data-platform-core-infra
+/data-products/_docs/ @ministryofjustice/data-tech-archs
+/data-products/_example/ @ministryofjustice/data-tech-archs
+/data-products/_example_2/ @ministryofjustice/data-platform-labs

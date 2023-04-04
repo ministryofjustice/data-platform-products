@@ -1,0 +1,47 @@
+---
+name: Data Product - example_2 - PoC
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - data-products/_example_2/**
+      - .github/workflows/data-product-example-2-poc.yaml
+
+jobs:
+  test:
+    uses: ./.github/workflows/data-product-example-2-test.yaml
+
+  upload:
+    name: Zip and upload
+    runs-on: ubuntu-latest
+    needs: test
+    permissions:
+      id-token: write # This is required for requesting the JWT
+    defaults:
+      run:
+        working-directory: data-products/_example_2
+    steps:
+      - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
+      - name: Set up Python 3.10.10
+        uses: actions/setup-python@d27e3f3d7c64b4bbf8e4abfb9b63b83e846e0435 # v4.5.0
+        with:
+          python-version: 3.10.10
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+      - name: Zip data product
+        run: python package_data_product.py
+      - name: OIDC Authentication
+        uses: aws-actions/configure-aws-credentials@e1e17a757e536f70e52b5a12b2e8d1d1c60e04ef # v2.0.0
+        with:
+          role-to-assume: arn:aws:iam::013433889002:role/data-platform-labs-github-actions
+          aws-region: eu-west-2
+          role-duration-seconds: 3600
+          role-session-name: githubactionsiamsession
+      - name: Push to s3
+        env:
+          BUCKET_NAME: data-platform-products-sandbox20230328133227039700000001
+        run: |
+          aws s3 sync . s3://$BUCKET_NAME/code/_example_2/ \
+            --exclude '*' --include 'data_product__example_2.zip'
