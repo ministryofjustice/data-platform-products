@@ -39,9 +39,9 @@ def get_data(bucket, key):
         raise
 
 
-def generate_report():
+def generate_report(bucket, key):
     # group by establishment, religion, offence and get count offence
-    raw_data = get_data()
+    raw_data = get_data(bucket, key)
     transformed_data = raw_data.value_counts(
         subset=["Establishment", "Religion", "Offence"], sort=False).reset_index()
     transformed_data.columns = [
