@@ -22,7 +22,7 @@ logging.basicConfig()
 #
 #    return pd.read_sql_table("adjudications", engine)
 
-def get_data(bucket: str, key: str) -> pd.Dataframe:
+def get_data(bucket: str, key: str) -> pd.DataFrame:
     s3_client = boto3.client("s3")
     bucket = bucket
     key = key
@@ -38,7 +38,7 @@ def get_data(bucket: str, key: str) -> pd.Dataframe:
         raise
 
 
-def generate_report(bucket: str, key: str) -> pd.Dataframe:
+def generate_report(bucket: str, key: str) -> pd.DataFrame:
     # group by establishment, religion, offence and get count offence
     raw_data = get_data(bucket, key)
     transformed_data = raw_data.value_counts(
