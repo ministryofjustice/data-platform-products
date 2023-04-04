@@ -1,8 +1,6 @@
 import pandas as pd
-import os
-from sqlalchemy import create_engine
 import logging
-
+import boto3
 logging.basicConfig()
 
 # This is a temporary solution, see DLAB-33 and DLAB-34 for more details.
@@ -25,7 +23,20 @@ logging.basicConfig()
 #    return pd.read_sql_table("adjudications", engine)
 
 def get_table():
-    return pd.read_csv("AdjudicationsQ32022.csv")
+    # This is something that should be hidden from the product developer. They should just pass in the file/table name.
+    # It's then the responsibility of the data platform to find this file and execute the transformation code.
+    s3_client = boto3.client("s3")
+    bucket = "hemesh-test"
+    key = "AdjudicationsQ32022.csv"
+    response = s3_client.get_object(Bucket=bucket, Key=key)
+
+    status = response.get("ResponseMetadata", {}).get("HTTPStatusCode")
+
+    if status == 200:
+        return pd.read_csv(response.get("Body"))
+    else:
+        logging.error("Bucket {} or file {}".format(bucket, key))
+        raise
 
 
 def generate_report():
@@ -38,16 +49,3 @@ def generate_report():
 
     logging.info("Data is transformed and can now be persisted somewhere")
     return transformed_data
-
-
-def persist_data():
-    #  Placeholder for when we want to save the data into a storage place.
-    pass
-
-
-def main():
-    generate_report()
-
-
-if __name__ == "__main__":
-    main()

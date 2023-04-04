@@ -3,8 +3,8 @@ import glob
 
 
 def zip_data_product(folder: str):
-    with zipfile.ZipFile(f"data_product_{folder}.zip", "w") as f:
-        for file in glob.glob(f"./{folder}/application/*") + glob.glob(f"./{folder}/requirements.txt"):
+    with zipfile.ZipFile(f"data_product{folder}.zip", "w") as f:
+        for file in glob.glob(f"./{folder}/application/*.py") + glob.glob(f"./{folder}/requirements.txt"):
             f.write(file)
 
 
