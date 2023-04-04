@@ -22,12 +22,12 @@ logging.basicConfig()
 #
 #    return pd.read_sql_table("adjudications", engine)
 
-def get_table():
+def get_data(bucket, key):
     # This is something that should be hidden from the product developer. They should just pass in the file/table name.
     # It's then the responsibility of the data platform to find this file and execute the transformation code.
     s3_client = boto3.client("s3")
-    bucket = "hemesh-test"
-    key = "AdjudicationsQ32022.csv"
+    bucket = bucket
+    key = key
     response = s3_client.get_object(Bucket=bucket, Key=key)
 
     status = response.get("ResponseMetadata", {}).get("HTTPStatusCode")
@@ -41,7 +41,7 @@ def get_table():
 
 def generate_report():
     # group by establishment, religion, offence and get count offence
-    raw_data = get_table()
+    raw_data = get_data()
     transformed_data = raw_data.value_counts(
         subset=["Establishment", "Religion", "Offence"], sort=False).reset_index()
     transformed_data.columns = [
