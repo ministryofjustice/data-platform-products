@@ -35,7 +35,8 @@ def get_data(bucket, key):
     if status == 200:
         return pd.read_csv(response.get("Body"))
     else:
-        logging.error("Bucket {} or file {} does not exist".format(bucket, key))
+        logging.error(
+            "Bucket {} or file {} does not exist".format(bucket, key))
         raise
 
 
