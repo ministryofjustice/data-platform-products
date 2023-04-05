@@ -23,7 +23,7 @@ class TestTransform(object):
             "Count": [1, 1, 1, 1]
             }
 
-    @patch('application.transform.get_table', return_value=pd.DataFrame.from_dict(data))
+    @patch('application.transform.get_data', return_value=pd.DataFrame.from_dict(data))
     def test_generate_report(self, mocked_table):
         expected_data = {"Establishment": ["Belmarsh", "Belmarsh", "Frankland", "Frankland"],
                          "Religion": ["a Christian", "b Muslim", "b Muslim", "i No religion"],
@@ -32,4 +32,5 @@ class TestTransform(object):
                          "Count": [1, 1, 1, 1]
                          }
         expected = pd.DataFrame.from_dict(expected_data)
-        pd.testing.assert_frame_equal(generate_report(), expected)
+        pd.testing.assert_frame_equal(generate_report(
+            'fake_bucket', 'fake_key'), expected)
