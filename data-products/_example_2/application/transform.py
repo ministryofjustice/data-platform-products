@@ -1,11 +1,13 @@
 import pandas as pd
 import logging
 import boto3
+
+
 logging.basicConfig()
+s3_client = boto3.client("s3")
 
 
 def get_data(bucket: str, key: str) -> pd.DataFrame:
-    s3_client = boto3.client("s3")
     response = s3_client.get_object(Bucket=bucket, Key=key)
 
     status = response.get("ResponseMetadata", {}).get("HTTPStatusCode")
