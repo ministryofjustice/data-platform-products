@@ -13,6 +13,7 @@ def get_data(bucket: str, key: str) -> pd.DataFrame:
     status = response.get("ResponseMetadata", {}).get("HTTPStatusCode")
 
     if status == 200:
+        logging.info("Data has been collected from {}/{}".format(bucket, key))
         return pd.read_csv(response.get("Body"))
     else:
         logging.error(
@@ -28,5 +29,5 @@ def generate_report(bucket: str, key: str) -> pd.DataFrame:
     transformed_data.columns = [
         "Establishment", "Religion", "Offence", "Count"]
 
-    logging.info("Data is transformed and can now be persisted somewhere")
+    logging.info("Data is transformed")
     return transformed_data
