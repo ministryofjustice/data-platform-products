@@ -44,4 +44,4 @@ jobs:
           BUCKET_NAME: data-platform-products-sandbox20230328133227039700000001
         run: |
           aws s3 sync . s3://$BUCKET_NAME/code/_example_2/ \
-            --exclude '*' --include 'data_product__example_2.zip'
+            --exclude '*' --include 'data_product_example_2.zip'
