@@ -1,5 +1,5 @@
 ---
-name: Data Product - example_2 - PoC
+name: Data Product - example_2 - upload
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
       - main
     paths:
       - data-products/_example_2/**
-      - .github/workflows/data-product-example-2-poc.yaml
+      - .github/workflows/data-product-example-2-upload.yaml
 
 jobs:
   test:
