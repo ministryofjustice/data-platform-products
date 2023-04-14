@@ -1,5 +1,5 @@
 ---
-name: Data Product - example_2 - upload
+name: Data Product - example_2 - Upload
 
 on:
   push:
