@@ -13,7 +13,8 @@ def zip_data_product(folder: str):
     ) as f:
         data_product_directory = os.path.join(file_directory, folder)
         for file in (
-            glob.glob(os.path.join(data_product_directory, "application", "*.py"))
+            glob.glob(os.path.join(
+                data_product_directory, "application", "*.py"))
             + glob.glob(os.path.join(data_product_directory, "requirements.txt"))
             + glob.glob(os.path.join(data_product_directory, "metadata", "*"))
         ):
