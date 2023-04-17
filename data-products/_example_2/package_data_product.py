@@ -11,15 +11,13 @@ def zip_data_product(folder: str):
     with zipfile.ZipFile(
         os.path.join(file_directory, f"data_product{folder}.zip"), "w"
     ) as f:
-        data_product_directory = os.path.join(file_directory, folder)
         for file in (
-            glob.glob(os.path.join(
-                data_product_directory, "application", "*.py"))
-            + glob.glob(os.path.join(data_product_directory, "requirements.txt"))
-            + glob.glob(os.path.join(data_product_directory, "metadata", "*"))
+            glob.glob(os.path.join(file_directory, "application", "*.py"))
+            + glob.glob(os.path.join(file_directory, "requirements.txt"))
+            + glob.glob(os.path.join(file_directory, "metadata", "*"))
         ):
             logging.info(file)
-            f.write(file)
+            f.write(file, arcname=file.split(file_directory)[1])
 
 
 def main():
