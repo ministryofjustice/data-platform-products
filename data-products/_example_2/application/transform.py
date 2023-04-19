@@ -6,6 +6,9 @@ import boto3
 logging.basicConfig()
 s3_client = boto3.client("s3")
 
+# Input name for result of generate_report() transformation
+report_name = "just_a_test"
+
 
 def get_data(bucket: str, key: str) -> pd.DataFrame:
     response = s3_client.get_object(Bucket=bucket, Key=key)
