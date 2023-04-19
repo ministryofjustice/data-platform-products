@@ -7,7 +7,7 @@ on:
       - main
     paths:
       - .github/workflows/data-product-example-2-test.yaml
-      - data-products/_example_2/**
+      - data-products/example_2/**
   workflow_call:
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: data-products/_example_2
+        working-directory: data-products/example_2
     strategy:
       max-parallel: 4
       matrix:
