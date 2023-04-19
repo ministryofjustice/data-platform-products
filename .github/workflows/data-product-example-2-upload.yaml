@@ -43,5 +43,5 @@ jobs:
         env:
           BUCKET_NAME: data-platform-products-development20230412155038755500000001
         run: |
-          aws s3 sync . s3://$BUCKET_NAME/code_zips/example_2/extraction_timestamp=$(date +%Y%m%d%H%M%S)/ \
+          aws s3 sync . s3://$BUCKET_NAME/code_zips/example_2/ \
             --exclude '*' --include 'data_product_example_2.zip'
