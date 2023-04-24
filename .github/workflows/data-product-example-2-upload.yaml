@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - data-products/_example_2/**
+      - data-products/example_2/**
       - .github/workflows/data-product-example-2-upload.yaml
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
       id-token: write # This is required for requesting the JWT
     defaults:
       run:
-        working-directory: data-products/_example_2
+        working-directory: data-products/example_2
     steps:
       - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
       - name: Set up Python 3.10.10
@@ -43,5 +43,5 @@ jobs:
         env:
           BUCKET_NAME: data-platform-products-development20230412155038755500000001
         run: |
-          aws s3 sync . s3://$BUCKET_NAME/code/_example_2/ \
+          aws s3 sync . s3://$BUCKET_NAME/code_zips/example_2/ \
             --exclude '*' --include 'data_product_example_2.zip'

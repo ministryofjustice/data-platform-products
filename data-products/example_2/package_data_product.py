@@ -9,7 +9,7 @@ file_directory = os.path.dirname(os.path.abspath(__file__))
 
 def zip_data_product(folder: str):
     with zipfile.ZipFile(
-        os.path.join(file_directory, f"data_product{folder}.zip"), "w"
+        os.path.join(file_directory, f"data_product_{folder}.zip"), "w"
     ) as f:
         for file in (
             glob.glob(os.path.join(file_directory, "application", "*.py"))
