@@ -9,9 +9,6 @@ from pathlib import Path
 logging.basicConfig()
 s3_client = boto3.client("s3")
 
-# Input name for result of generate_report() transformation
-report_name = "just_a_test"
-
 
 def get_data(bucket: str, key: str) -> pd.DataFrame:
     response = s3_client.get_object(Bucket=bucket, Key=key)
@@ -46,7 +43,6 @@ def get_tables(bucket, key, source_data):
 def generate_report(bucket: str, key: str) -> dict:
     results_dict = {}
     source_data = Path(key).parts[2]
-    # source_data = [i for i in key.split("/") if "source_data_name=" in i][0].removeprefix("source_data_name=")
     data_products_dict = get_tables(bucket, key, source_data)
     raw_data = get_data(bucket, key)
     for database, tables in data_products_dict.items():
@@ -55,6 +51,9 @@ def generate_report(bucket: str, key: str) -> dict:
             results_dict[database][table] = eval(table + "(bucket, key, raw_data)")
 
     return results_dict
+
+
+# Add functions for each table transformation below
 
 
 # function to create table 1
