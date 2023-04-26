@@ -48,7 +48,8 @@ def generate_report(bucket: str, key: str) -> dict:
     for database, tables in data_products_dict.items():
         results_dict[database] = {}
         for table in tables:
-            results_dict[database][table] = eval(table + "(bucket, key, raw_data)")
+            results_dict[database][table] = eval(
+                table + "(bucket, key, raw_data)")
 
     return results_dict
 
