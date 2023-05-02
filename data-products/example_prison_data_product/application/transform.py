@@ -24,7 +24,7 @@ def get_data(bucket: str, key: str) -> pd.DataFrame:
         raise
 
 
-def get_tables(bucket, key, source_data):
+def get_tables(bucket, key, source_data) -> Dict[str, list[str]]:
     product_name = Path(key).parts[1]
     yaml_key = os.path.join(
         "code", product_name, "extracted", "metadata", "02-data-dictionary.yml"
