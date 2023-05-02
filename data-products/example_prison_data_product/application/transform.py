@@ -24,7 +24,9 @@ def get_data(bucket: str, key: str) -> pd.DataFrame:
         raise
 
 
-def get_tables(bucket, key, source_data) -> Dict[str, list[str]]:
+def get_tables(
+    bucket: str, key: str, source_data: str
+) -> Dict[str, list[str]]:
     product_name = Path(key).parts[1]
     yaml_key = os.path.join(
         "code", product_name, "extracted", "metadata", "02-data-dictionary.yml"
@@ -44,13 +46,13 @@ def get_tables(bucket, key, source_data) -> Dict[str, list[str]]:
 def generate_report(bucket: str, key: str) -> Dict[str, pd.DataFrame]:
     results_dict = {}
     source_data = Path(key).parts[2]
-    # The names of the functions need to match up with the tables as defined in the metadata
     data_products_dict = get_tables(bucket, key, source_data)
     raw_data = get_data(bucket, key)
     for database, tables in data_products_dict.items():
         results_dict[database] = {}
         for table in tables:
-            # e.g. One loop of this might evaluate to `table_1(bucket, key, data)` and execute one of the functions below with the correct arguments supplied
+            # e.g. One loop of this might evaluate to `table_1(bucket, key, data)`
+            # and execute one of the functions below with the correct arguments
             results_dict[database][table] = eval(
                 table + "(bucket, key, raw_data)"
             )
@@ -59,7 +61,8 @@ def generate_report(bucket: str, key: str) -> Dict[str, pd.DataFrame]:
 
 
 # Add functions for each table transformation below
-
+# The names of each function need to match up with the tables
+# as defined in the metadata data-dictionary.yml file
 
 # function to create table 1
 def adj_example_1(
