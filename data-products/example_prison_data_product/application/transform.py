@@ -4,7 +4,7 @@ import boto3
 import yaml
 import os
 from pathlib import Path
-
+from typing import Dict
 
 logging.basicConfig()
 s3_client = boto3.client("s3")
