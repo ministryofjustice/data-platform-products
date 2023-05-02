@@ -25,8 +25,9 @@ def get_data(bucket: str, key: str) -> pd.DataFrame:
 
 
 def get_tables(bucket, key, source_data):
+    product_name = Path(key).parts[1]
     yaml_key = os.path.join(
-        "code/", key.split("/")[1], "extracted/metadata/02-data-dictionary.yml"
+        "code", product_name, "extracted", "metadata", "02-data-dictionary.yml"
     )
     response = s3_client.get_object(Bucket=bucket, Key=yaml_key)
     data_dict = yaml.safe_load(response["Body"])
@@ -49,7 +50,8 @@ def generate_report(bucket: str, key: str) -> dict:
         results_dict[database] = {}
         for table in tables:
             results_dict[database][table] = eval(
-                table + "(bucket, key, raw_data)")
+                table + "(bucket, key, raw_data)"
+            )
 
     return results_dict
 
