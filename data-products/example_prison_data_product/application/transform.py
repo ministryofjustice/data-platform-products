@@ -44,6 +44,7 @@ def get_tables(bucket, key, source_data):
 def generate_report(bucket: str, key: str) -> dict:
     results_dict = {}
     source_data = Path(key).parts[2]
+    # The names of the functions need to match up with the tables as defined in the metadata
     data_products_dict = get_tables(bucket, key, source_data)
     raw_data = get_data(bucket, key)
     for database, tables in data_products_dict.items():
