@@ -41,7 +41,7 @@ def get_tables(bucket, key, source_data):
     return tables_dict
 
 
-def generate_report(bucket: str, key: str) -> dict:
+def generate_report(bucket: str, key: str) -> Dict[str, pd.DataFrame]:
     results_dict = {}
     source_data = Path(key).parts[2]
     # The names of the functions need to match up with the tables as defined in the metadata
