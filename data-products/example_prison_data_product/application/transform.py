@@ -35,7 +35,7 @@ def get_tables(bucket, key, source_data):
     for key in data_dict:
         tables_dict[key] = [
             table for table in data_dict[key]['tables']
-            if data_dict[key]['tables'][i]['source_data'] == source_data
+            if data_dict[key]['tables'][table]['source_data'] == source_data
         ]
 
     return tables_dict
