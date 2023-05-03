@@ -3,3 +3,5 @@ SQLAlchemy
 psycopg2-binary
 pytest
 boto3
+PyYAML
+moto
