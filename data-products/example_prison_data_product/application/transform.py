@@ -7,10 +7,10 @@ from pathlib import Path
 from typing import Dict
 
 logging.basicConfig()
-s3_client = boto3.client("s3")
 
 
 def get_data(bucket: str, key: str) -> pd.DataFrame:
+    s3_client = boto3.client("s3")
     response = s3_client.get_object(Bucket=bucket, Key=key)
 
     status = response.get("ResponseMetadata", {}).get("HTTPStatusCode")
@@ -27,6 +27,7 @@ def get_data(bucket: str, key: str) -> pd.DataFrame:
 def get_tables(
     bucket: str, key: str, source_data: str
 ) -> Dict[str, list[str]]:
+    s3_client = boto3.client("s3")
     product_name = Path(key).parts[1]
     yaml_key = os.path.join(
         "code", product_name, "extracted", "metadata", "02-data-dictionary.yml"
