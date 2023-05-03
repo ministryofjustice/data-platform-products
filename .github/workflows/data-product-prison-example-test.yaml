@@ -1,13 +1,13 @@
 ---
-name: Data Product - example_2 - Test
+name: Data Product - prison-example - Test
 
 on:
   pull_request:
     branches:
       - main
     paths:
-      - .github/workflows/data-product-example-2-test.yaml
-      - data-products/example_2/**
+      - .github/workflows/data-product-prison-example-test.yaml
+      - data-products/example_prison_data_product/**
   workflow_call:
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: data-products/example_2
+        working-directory: data-products/example_prison_data_product
     strategy:
       max-parallel: 4
       matrix:

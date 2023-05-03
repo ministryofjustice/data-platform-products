@@ -1,17 +1,17 @@
 ---
-name: Data Product - example_2 - Upload
+name: Data Product - prison-example - Upload
 
 on:
   push:
     branches:
       - main
     paths:
-      - data-products/example_2/**
-      - .github/workflows/data-product-example-2-upload.yaml
+      - data-products/example_prison_data_product/**
+      - .github/workflows/data-product-prison-example-upload.yaml
 
 jobs:
   test:
-    uses: ./.github/workflows/data-product-example-2-test.yaml
+    uses: ./.github/workflows/data-product-prison-example-test.yaml
 
   upload:
     name: Zip and upload
@@ -21,7 +21,7 @@ jobs:
       id-token: write # This is required for requesting the JWT
     defaults:
       run:
-        working-directory: data-products/example_2
+        working-directory: data-products/example_prison_data_product
     steps:
       - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
       - name: Set up Python 3.10.10
@@ -43,5 +43,5 @@ jobs:
         env:
           BUCKET_NAME: data-platform-products-development20230412155038755500000001
         run: |
-          aws s3 sync . s3://$BUCKET_NAME/code_zips/example_2/ \
-            --exclude '*' --include 'data_product_example_2.zip'
+          aws s3 sync . s3://$BUCKET_NAME/code_zips/example_prison_data_product/ \
+            --exclude '*' --include 'data_product_example_prison_data_product.zip'

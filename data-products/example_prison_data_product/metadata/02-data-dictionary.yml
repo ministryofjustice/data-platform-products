@@ -7,7 +7,7 @@
 #-------------------------------------------------------------
 
 # You must specify at least one collection of datasets. Some users may find it helpful to think of this as a "database"
-prison_population:
+example_prison_data_product:
   # model can be "domain" or "tabular"
   model: "tabular"
   # Add a description for your collection to help users find it.
@@ -21,8 +21,9 @@ prison_population:
   tables:
     # Your database must contain at least one table. Each table must contain at least one column. If the data is time-based,
     # please indicate which column is the primary date value using the "primary-period: true" attribute.
-    adjudications:
-      description: "Prison population by offence group"
+    adj_example_1:
+      source_data: adjudications
+      description: "Prison adjudications by offence group"
       update-strategy: "selected-dimensions"
       update-dimensions: []
       columns:
@@ -38,6 +39,33 @@ prison_population:
         - name: "Offence"
           data-type: "string"
           column-type: "dimension"
+        - name: "Count"
+          data-type: "int"
+          column-type: "dimension"
+    adj_example_2:
+      source_data: adjudications
+      description: "Prison adjudication totals by prison"
+      update-strategy: "selected-dimensions"
+      update-dimensions: []
+      columns:
+        # A column must contain at least a name and a data type.
+        - name: "Establishment"
+          description: "Establishment / Prison"
+          data-type: "string"
+          column-type: "fact"
+        - name: "Count"
+          data-type: "int"
+          column-type: "dimension"
+    punishments_example_1:
+      source_data: punishments
+      description: aggregated punishments by prison
+      update-strategy: "selected-dimensions"
+      update-dimensions: []
+      columns:
+        - name: "Establishment"
+          description: "Establishment / Prison"
+          data-type: "string"
+          column-type: "fact"
         - name: "Count"
           data-type: "int"
           column-type: "dimension"
