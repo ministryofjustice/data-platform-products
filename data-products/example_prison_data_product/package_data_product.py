@@ -21,7 +21,7 @@ def zip_data_product(folder: str):
 
 
 def main():
-    zip_data_product("example_2")
+    zip_data_product("example_prison_data_product")
 
 
 if __name__ == "__main__":
