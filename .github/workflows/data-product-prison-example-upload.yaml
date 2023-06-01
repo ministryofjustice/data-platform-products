@@ -33,7 +33,7 @@ jobs:
       - name: Zip data product
         run: python package_data_product.py
       - name: OIDC Authentication
-        uses: aws-actions/configure-aws-credentials@e1e17a757e536f70e52b5a12b2e8d1d1c60e04ef # v2.0.0
+        uses: aws-actions/configure-aws-credentials@5727f247b64f324ec403ac56ae05e220fd02b65f # v2.1.0
         with:
           role-to-assume: arn:aws:iam::013433889002:role/data-platform-labs-github-role
           aws-region: eu-west-2
