@@ -1,0 +1,28 @@
+---
+#-------------------------------------------------------------
+# Implementation notes
+#  - YAML validation required
+#  - Warn on missing recommended attributes
+#  - Warn on table & field names containing spaces or dashes
+#-------------------------------------------------------------
+
+# You must specify at least one collection of datasets. Some users may find it helpful to think of this as a "database"
+glue_athena_test:
+  # model can be "domain" or "tabular"
+  model: "tabular"
+  # Add a description for your collection to help users find it.
+  # This is optional, as the data product description will also aid discoverability.
+  description: "will be runing different size data through the glue compute to make comparisons with athena"
+  # limitations are optional, but you might want to tell users what they CAN'T do with this data
+  limitations:
+  # If versioning is enabled, the Data Platform will store a historical snaphot of the database each time an update is sent.
+  # This can add SIGNIFICANTLY to storage costs, so you may be asked to justify this.
+  enable-versioning: false
+  tables:
+    # Your database must contain at least one table. Each table must contain at least one column. If the data is time-based,
+    # please indicate which column is the primary date value using the "primary-period: true" attribute.
+    glue_load:
+      source_data: test_data
+      description: "randomly generated data"
+      update-strategy: "selected-dimensions"
+      update-dimensions: []
